@@ -45,6 +45,10 @@ module.exports = {
     // stats: 'verbose',
   },
   resolve: {
+    fallback: {
+      "util": require.resolve("util/"),
+      "path": require.resolve("path-browserify")
+    },
     modules: [
       path.resolve('src'),
       path.resolve('src/js'),
@@ -56,7 +60,7 @@ module.exports = {
       path.resolve('src/assets'),
       path.resolve('node_modules')
     ],
-    extensions: ['.js']
+    extensions: ['.js'],
   },
   optimization: {
     splitChunks: {
@@ -164,11 +168,11 @@ module.exports = {
       template: 'index.html',
       chunks: ['vender','main'],
     }),
-    new HtmlWebpackPlugin({
-      filename: 'index2.html',
-      template: 'index2.html',
-      chunks: ['vender','main2'],
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'index2.html',
+    //   template: 'index2.html',
+    //   chunks: ['vender','main2'],
+    // }),
   ],
   // watch: true,
   watchOptions: {

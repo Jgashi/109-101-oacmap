@@ -1,37 +1,5 @@
 //rwd
 
-@mixin rwd($breakpoint) {
-  @if $breakpoint=="xl" {
-    @media all and (min-width: 1201px) {
-      @content;
-    }
-  }
-  @if $breakpoint=="lg" {
-		@media all and (min-width: 992px) and (max-width: 1200px) {
-			@content;
-		}
-  }
-  @else if $breakpoint=="md" {
-		@media all and (min-width: 768px) and (max-width: 991px) {
-			@content;
-		}
-  }
-  @else if $breakpoint=="sm" {
-		@media all and (min-width: 576px) and (max-width: 767px) {
-			@content;
-		}
-  }
-  @else if $breakpoint=="ssm" {
-		@media all and (min-width: 375px) and (max-width: 575px) {
-			@content;
-		}
-  }
-  @else if $breakpoint==""{
-    @media all and (max-width: 374px) {
-			@content;
-		}
-  }
-}
 
 
 //spacing

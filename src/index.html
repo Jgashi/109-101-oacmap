@@ -250,11 +250,15 @@
   </div>
   <!-- lightBox end -->
   <!-- header -->
-  <header class="py-2">
-    <a href="#">
-      <img class="logo "src="./img/logoOCA.png">
-    </a>
-    <p class="title">海域遊憩活動一站式資訊平臺</p>
+  <header class="header navbar navbar-light bg-light">
+    <div class="container">
+      <div class="col">
+        <a href="#" class="navbar-brand">
+          <img src="./img/logoOCA.png" class="d-inline-block align-top">
+          <p>海域遊憩活動一站式資訊平臺</p>
+        </a>
+      </div>
+    </div>
   </header>
   <!-- header end -->
   
@@ -267,54 +271,61 @@
   </div>
   <!-- marquee end -->
   </div>
-  <section class="testimonials">
+  <section class="section1 bg-light text-center">
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gx-5 ">
-          <div class="col">
-            <div class="item" id="activity">
-              <div class="shadow-effect">
-                <img class="img-circle" src="./img/leading_page/application.png">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4" id="activity">
+            <div class="section1-item mx-auto my-3 my-lg-2">
+              <img class="section1-item-icon d-flex" src="./img/leading_page/application.png">
+            </div>
+            <button class="btn btn-primary">活動申請</button>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="section1-item mx-auto my-3 my-lg-2">
+              <img class="section1-item-icon d-flex" src="./img/leading_page/warning.png">
+            </div>
+            <button class="btn btn-primary">
+              禁止水域
+            </button>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="section1-item mx-auto my-3 my-lg-2">
+              <img class="section1-item-icon d-flex" src="./img/leading_page/warning.png">
+            </div>
+            <button class="btn btn-primary">
+              礙航/射擊通報
+            </button>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="section1-item mx-auto my-3 my-lg-2">
+              <img class="section1-item-icon d-flex" src="./img/leading_page/recreation.png">
+            </div>
+            <button class="btn btn-primary">遊憩查詢</button>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4" id="weatherPage">
+            <div class="section1-item mx-auto my-3 my-lg-2">
+              <img class="section1-item-icon d-flex" src="./img/leading_page/weather.png">
+            </div>
+            <button class="btn btn-primary">氣象海情</button>
+          </div>
+          <a href="map.html?catelog=situation" class="col-sm-6 col-md-6 col-lg-4">
+              <div class="section1-item mx-auto my-3 my-lg-2">
+                <img class="section1-item-icon d-flex" src="./img/leading_page/law.png">
               </div>
-              <button class="testimonial-name raise">活動申請</button>
+              <button class="btn btn-primary">法令資訊</button>
+          </a>
+          <a href="map.html?uuid=df595e60-6287-4623-8317-4b8d6f82e2e5" class="col-sm-6 col-md-6 col-lg-4">
+            <div class="section1-item mx-auto my-3 my-lg-2">
+              <img class="section1-item-icon d-flex" src="./img/leading_page/cctv.svg">
             </div>
-          </div>
-          <div class="col">
-            <div class="item">
-              <div class="shadow-effect">
-                <img class="img-circle" src="./img/leading_page/warning.png">
-              </div>
-              <button class="testimonial-name raise">
-                禁止水域<br>
-                礙航/射擊通報
-              </button>
+            <button class="btn btn-primary">海況即時影像</button>
+          </a>
+          <a href="map.html" class="col-sm-6 col-md-6 col-lg-4">
+            <div class="section1-item mx-auto my-3 my-lg-2">
+              <img class="section1-item-icon d-flex" src="./img/leading_page/taiwanmap.png">
             </div>
-          </div>
-          <div class="col">
-            <div class="item">
-              <div class="shadow-effect">
-                <img class="img-circle" src="./img/leading_page/recreation.png">
-              </div>
-              <button class="testimonial-name raise">遊憩查詢</button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item" id="weatherPage">
-              <div class="shadow-effect">
-                <img class="img-circle" src="./img/leading_page/weather.png">
-              </div>
-              <button class="testimonial-name raise">氣象海情</button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item">
-              <a href="map.html?catelog=situation">
-                <div class="shadow-effect">
-                  <img class="img-circle" src="./img/leading_page/law.png">
-                </div>
-                <button class="testimonial-name raise">法令資訊</button>
-              </a>
-            </div>
-          </div>
+            <button class="btn btn-primary">海況即時影像</button>
+          </a>
         </div>
     </div>
   </section>
@@ -336,15 +347,10 @@
         </div>
         <div class="component col-12 my-ssm-3 col-md-5 col-lg-5 mt-2">
           <div class="cctv col-5 col-md-7 col-lg-6">
-            <a href="map.html?uuid=df595e60-6287-4623-8317-4b8d6f82e2e5" class="mb-md-3">
-              <img src="./img/leading_page/cctv.svg">
-              <button class="raise mt-1 ml-sm-1 ml-md-2 p-md-1 ml-lg-3 p-lg-1 ml-xl-3 p-xl-1">海況即時影像</button>
-            </a>
+
           </div>
           <div class="map_content col-4 col-md-6 col-lg-6">
-            <a class="gis_map card3d" href="map.html" style="background-image: url(./img/leading_page/taiwanmap.png)">
-              <span>進入圖台</span>
-            </a>
+
           </div>
         </div>
       </div>

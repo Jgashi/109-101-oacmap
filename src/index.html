@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="<%= htmlWebpackPlugin.options.viewport %>">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海委會一站式入口網站</title>
 </head>
 <body>
   
@@ -257,6 +257,7 @@
     <p class="title">海域遊憩活動一站式資訊平臺</p>
   </header>
   <!-- header end -->
+  
   <!-- marquee -->
   <div class="marquee pb-md-2 container">
     <marquee direction="left" speed="slow" behavior="loop">
@@ -268,60 +269,55 @@
   </div>
   <section class="testimonials">
     <div class="container">
-        <div class="row no-gutters">
-          <div class="col-12">
-            <div id="customers-testimonials" class="owl-carousel customers-testimonials">
-              <div class="item" id="activity">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gx-5 ">
+          <div class="col">
+            <div class="item" id="activity">
+              <div class="shadow-effect">
+                <img class="img-circle" src="./img/leading_page/application.png">
+              </div>
+              <button class="testimonial-name raise">活動申請</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="./img/leading_page/warning.png">
+              </div>
+              <button class="testimonial-name raise">
+                禁止水域<br>
+                礙航/射擊通報
+              </button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="./img/leading_page/recreation.png">
+              </div>
+              <button class="testimonial-name raise">遊憩查詢</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="item" id="weatherPage">
+              <div class="shadow-effect">
+                <img class="img-circle" src="./img/leading_page/weather.png">
+              </div>
+              <button class="testimonial-name raise">氣象海情</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="item">
+              <a href="map.html?catelog=situation">
                 <div class="shadow-effect">
-                  <img class="img-circle" src="./img/leading_page/application.png">
-                  <p>本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。</p>
-                  <i class="fas fa-question tooltip" data-jbox-content="本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。"></i>
+                  <img class="img-circle" src="./img/leading_page/law.png">
                 </div>
-                <button class="testimonial-name raise">活動申請</button>
-              </div>
-              <div class="item">
-                <div class="shadow-effect">
-                  <img class="img-circle" src="./img/leading_page/warning.png">
-                  <p>本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。</p>
-                  <i class="fas fa-question tooltip" data-jbox-content="本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。"></i>
-                </div>
-                <button class="testimonial-name raise">
-                  禁止水域<br>
-                  礙航/射擊通報
-                </button>
-              </div>
-              <div class="item">
-                <div class="shadow-effect">
-                  <img class="img-circle" src="./img/leading_page/recreation.png">
-                  <p>本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。</p>
-                  <i class="fas fa-question tooltip" data-jbox-content="本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。"></i>
-                </div>
-                <button class="testimonial-name raise">遊憩查詢</button>
-              </div>
-              <div class="item" id="weatherPage">
-                <div class="shadow-effect">
-                  <img class="img-circle" src="./img/leading_page/weather.png">
-                  <p>本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。</p>
-                  <i class="fas fa-question tooltip" data-jbox-content="本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。"></i>
-                </div>
-                <button class="testimonial-name raise">氣象海情</button>
-              </div>
-              <div class="item">
-                <a href="map.html?catelog=situation">
-                  <div class="shadow-effect">
-                    <img class="img-circle" src="./img/leading_page/law.png">
-                    <p>本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。</p>
-                    <i class="fas fa-question tooltip" data-jbox-content="本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。"></i>
-                  </div>
-                  <button class="testimonial-name raise">法令資訊</button>
-                </a>
-              </div>
+                <button class="testimonial-name raise">法令資訊</button>
+              </a>
             </div>
           </div>
         </div>
     </div>
   </section>
-  
   <section class="second">
     <div class="container">
       <div class="row  mt-md-5 no-gutters">

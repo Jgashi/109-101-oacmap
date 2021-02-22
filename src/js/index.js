@@ -47,16 +47,6 @@ function tabChange(){
 
 
 $(function() {
-  new jBox('Tooltip', {
-    attach: '.tooltip',
-    maxWidth: '400px',
-    getContent: 'data-jbox-content',
-    position: {
-      x: 'right',
-      y: 'center'
-    },
-    outside: 'xy'
-  });
   localStorage.setItem('myCat', 'Tom');
   // showLow(),
   showWeatherBox(),

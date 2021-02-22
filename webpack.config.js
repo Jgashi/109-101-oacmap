@@ -13,12 +13,12 @@ module.exports = {
   context: path.resolve(__dirname, "./src"),
   entry: {
     main: 'main',
+    main2: 'main2',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name]-[fullhash].js',
     // assetModuleFilename: '[name][ext]',
-    publicPath: './',
     assetModuleFilename: 'img/[hash][ext][query]'
   },
   stats: {
@@ -45,7 +45,7 @@ module.exports = {
     //   version: false,
     //   warnings: falsenp
     // },
-    stats: 'normal',
+    stats: 'verbose',
   },
   resolve: {
     modules: [
@@ -216,11 +216,16 @@ module.exports = {
       '**/*.css' : 'text/css'
     }),
     new HtmlWebpackPlugin({
-      title: '海委會一站式入口網站',
+      // title: '海委會一站式入口網站',
+      // viewport: 'width=device-width, initial-scale=1.0',
       filename: 'index.html',
       template: 'index.html',
-      viewport: 'width=device-width, initial-scale=1.0',
       chunks: ['vender','main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index2.html',
+      template: 'index2.html',
+      chunks: ['vender','main2'],
     }),
   ],
   // watch: true,

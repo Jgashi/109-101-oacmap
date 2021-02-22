@@ -8,7 +8,7 @@ const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkT
 
 
 module.exports = {
-  devtool: 'eval-cheap-source-map',
+  devtool: 'eval-source-map',
   mode: 'development',
   context: path.resolve(__dirname, "./src"),
   entry: {
@@ -21,31 +21,28 @@ module.exports = {
     // assetModuleFilename: '[name][ext]',
     assetModuleFilename: 'img/[hash][ext][query]'
   },
-  stats: {
-    children: true,
-  },
   devServer: {
     compress: true,
     open: true,
     hot: true,
     contentBase: path.join(__dirname, 'dist'),
     writeToDisk: true,
-    // stats:{
-    //   assets: true, //加入資源訊息
-    //   cached: false, //加入暫存(但未建構) 模塊的訊息
-    //   chunks: false, //加入 chunk 訊息 (設置為`false`則允許較少的冗長輸出)
-    //   children: true,
-    //   chunkModules: false, //將建構模塊訊息加入到chunk訊息
-    //   chunkOrigins: false,
-    //   color: true, //等同`wepack --colors`
-    //   hash: false,
-    //   modules: false,
-    //   reasons: false,
-    //   source: false,
-    //   version: false,
-    //   warnings: falsenp
-    // },
-    stats: 'verbose',
+    stats:{
+      assets: true, //加入資源訊息
+      cached: false, //加入暫存(但未建構) 模塊的訊息
+      chunks: false, //加入 chunk 訊息 (設置為`false`則允許較少的冗長輸出)
+      children: true,
+      chunkModules: false, //將建構模塊訊息加入到chunk訊息
+      chunkOrigins: false,
+      color: true, //等同`wepack --colors`
+      hash: false,
+      modules: false,
+      reasons: false,
+      source: false,
+      version: false,
+      warnings: false,
+    },
+    // stats: 'verbose',
   },
   resolve: {
     modules: [
@@ -83,63 +80,8 @@ module.exports = {
         test: /\.html$/,
         use: [{
           loader: "html-loader",
-          options: {
-            //minimize: false,
-          }
         }]
       },
-      // {
-      //   test: /\.html$/,
-      //   type: 'asset/resource',
-      //   generator: {
-      //     filename: '[name][ext]',
-      //   },
-      // },
-      // {
-      //   test: /\.html$/i,
-      //   use: ['extract-loader', 'html-loader'],
-      // },
-      // {
-      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-      //   type: 'asset/resource',
-      //   use: [{
-      //       // loader: "file-loader",
-      //       // options: {
-      //       //   esModule: false,
-      //       //   limit: 8192, // size <= 1kib
-      //       //   name: '[name].[hash].[ext]',
-      //       //   publicPath: 'assets',
-      //       //   outputPath: 'assets/img'
-      //       // }
-      //       loader: 'file-loader',
-      //       options: {
-      //         //name: '[path][name].[ext]',
-      //         outputPath: 'img',
-      //         //esModule: false,
-      //       }
-      //     },/* {
-      //       loader: 'image-webpack-loader',
-      //       options: {
-      //         // 只在 production 環境啟用壓縮 (第二步)
-      //         disable: process.env.NODE_ENV === 'production' ? false : true,
-      //         mozjpeg: {
-      //           progressive: true,
-      //           quality: 65,
-      //         },
-      //         pngquant: {
-      //           quality: [0.65, 0.9],
-      //           speed: 4,
-      //         },
-      //         gifsicle: {
-      //           interlaced: false,
-      //         },
-      //         webp: {
-      //           quality: 75, // 配置選項表示啟用 WebP 優化器
-      //         },
-      //       },
-      //     },*/
-      //   ]
-      // },
       // 配置 babel-loader (第一步)
       {
         test: /\.m?js$/,

@@ -1,0 +1,48 @@
+$colors: (
+  fill: #a972cb,
+  pulse: #ef6eae, 
+  close: #ff7f82, 
+  raise: #f73636, 
+  up: #e4cb58, 
+  slide: #8fc866, 
+  offset: #19bc8b
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 10deg)};
+  }
+};
+
+body{
+  text-align: center;
+}
+
+.portal{
+  height: 100vh;
+}
+
+a{
+  display: block;
+  text-decoration: none;
+}
+
+.portal-container-card{
+  background-color: #ff8c8c;
+}
+
+.card-title{
+  font-weight: bolder;
+  cursor: default;
+}
+
+.card-subtitle{
+  font-weight: bolder;
+  color: black;
+  background-color: white;
+  &:hover{
+    color: white;
+    background-color: #fa4646;
+  }
+}

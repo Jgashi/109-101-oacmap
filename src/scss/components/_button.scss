@@ -1,0 +1,49 @@
+$colors: (
+  fill: #a972cb,
+  pulse: #ef6eae, 
+  close: #ff7f82, 
+  raise: $primary, 
+  up: #e4cb58, 
+  slide: #8fc866, 
+  offset: #19bc8b
+);
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 10deg)};
+  }
+};
+button {
+  // color: var(--color);
+  transition: 0.25s;
+  background-color: var(--color); 
+  // background: none;
+  border: 2px solid var(--color);
+  font: inherit;
+  line-height: 1;
+  // margin: 0.5em;
+  &:hover,
+  &:focus { 
+    border-color: $white;
+    color: var(--hover);
+    background-color: $white;
+  }
+}
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 var(--hover),
+      inset 6em 3.5em 0 0 var(--hover);
+  }
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}

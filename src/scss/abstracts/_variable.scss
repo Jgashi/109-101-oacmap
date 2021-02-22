@@ -1,0 +1,85 @@
+//grid
+
+$gutter-width: 30px;
+$grid-sum: 12;
+$grid-breakpoints: (
+  '': false,
+  ssm: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+
+//spacing
+
+$spacies: (
+  '0': 0px,
+  '1': 4px,
+  '2': 10px,
+  '3': 18px,
+  '4': 24px,
+  '5': 30px,
+  '6': 60px,
+  'auto': auto,
+);
+$property: 'm', 'p';
+$sides: '', 't', 'b', 'l', 'r', 'x', 'y';
+
+
+//color
+
+$primary: rgba(20, 110, 212, 1);
+$primaryHalf: rgba(20, 110, 212, 0.5);
+$footer: rgba(0, 8, 85, 0.8);
+$second: rgba(43, 169, 253, 1);
+$link: rgba(0, 197, 154, 0.8);
+$bubble: rgba(25, 114, 216, 0.8);
+$bubbleHover: rgba(25, 114, 216, 0.2);
+$textBgcolor: rgba(0, 0, 0, 0.6);
+$textBgcolor2: rgba(0, 0, 0, 0.8);
+$black:#2e3539;
+$white:#F5F7FA;
+$whiteHover: #898b8d;
+$whiteBorder:hsla(216, 33%, 97%, 0.8);
+
+
+// asideBar custom
+
+$asideBarBgColor:#0a2234;
+$asideBarColor:$white;
+
+
+// toolBar custom
+
+$toolBarBgColor:$black;
+$toolBarColor:$white;
+
+
+//font-size
+
+$font_size_1: 12px;
+$font_size_2: 16px;
+$font_size_3: 20px;
+$font_size_4: 24px;
+$font_size_5: 28px;
+$font_size_6: 36px;
+$font_size_7: 48px;
+$font_size_8: 60px;
+
+
+//line-height
+
+$line_height_1: 1.2;
+$line_height_2: 1.5;
+
+//border-raduis
+$border_radius_1: 3px;
+$border_radius_2: 8px;
+$border_radius_3: 12px;
+$border_radius_4: 20px;
+$border_radius_5: 30px;
+
+//cursor
+// $pointer: pointer;

@@ -1,0 +1,129 @@
+//rwd
+
+@mixin rwd($breakpoint) {
+  @if $breakpoint=="xl" {
+    @media all and (min-width: 1201px) {
+      @content;
+    }
+  }
+  @if $breakpoint=="lg" {
+		@media all and (min-width: 992px) and (max-width: 1200px) {
+			@content;
+		}
+  }
+  @else if $breakpoint=="md" {
+		@media all and (min-width: 768px) and (max-width: 991px) {
+			@content;
+		}
+  }
+  @else if $breakpoint=="sm" {
+		@media all and (min-width: 576px) and (max-width: 767px) {
+			@content;
+		}
+  }
+  @else if $breakpoint=="ssm" {
+		@media all and (min-width: 375px) and (max-width: 575px) {
+			@content;
+		}
+  }
+  @else if $breakpoint==""{
+    @media all and (max-width: 374px) {
+			@content;
+		}
+  }
+}
+
+
+//spacing
+
+@mixin generate($pro, $side, $spacValue) {
+  @if $side == '' {
+    @if $pro == 'm' {
+      margin: $spacValue ;
+    }
+    @if $pro == 'p' {
+      padding: $spacValue ;
+    }
+  }
+  @if $side == 't' {
+    @if $pro == 'm' {
+      margin-top: $spacValue ;
+    }
+    @if $pro == 'p' {
+      padding-top: $spacValue ;
+    }
+  }
+  @if $side == 'b' {
+    @if $pro == 'm' {
+      margin-bottom: $spacValue ;
+    }
+    @if $pro == 'p' {
+      padding-bottom: $spacValue ;
+    }
+  }
+  @if $side == 'l' {
+    @if $pro == 'm' {
+      margin-left: $spacValue ;
+    }
+    @if $pro == 'p' {
+      padding-left: $spacValue ;
+    }
+  }
+  @if $side == 'r' {
+    @if $pro == 'm' {
+      margin-right: $spacValue ;
+    }
+    @if $pro == 'p' {
+      padding-right: $spacValue ;
+    }
+  }
+  @if $side == 'x' {
+    @if $pro == 'm' {
+      margin-left: $spacValue ;
+      margin-right: $spacValue ;
+    }
+    @if $pro == 'p' {
+      padding-left: $spacValue ;
+      padding-right: $spacValue ;
+    }
+  }
+  @if $side == 'y' {
+    @if $pro == 'm' {
+      margin-top: $spacValue ;
+      margin-bottom: $spacValue ;
+    }
+    @if $pro == 'p' {
+      padding-top: $spacValue ;
+      padding-bottom: $spacValue ;
+    }
+  }
+}
+
+//boxShadow
+
+@mixin boxShadow {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  background-color: $textBgcolor2;
+  display: none;
+}
+
+//font_size_style
+
+@mixin fontSizeStyle {
+  font-size: $font_size_1;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+//space-evenly
+@mixin spaceEvenly {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 700px;  
+}
+

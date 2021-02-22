@@ -1,0 +1,138 @@
+.weather{
+  width:-webkit-fill-available;
+  max-height: unset;
+  @include rwd(lg){
+    width: 992px;
+  }
+  @include rwd(xl){
+    width: 1200px;
+  }
+  .lightbox-container{
+    overflow: auto;
+    .weather-content{
+      max-height: 100vh;
+      @include rwd(sm){
+        @include spaceEvenly;
+      }
+      @include rwd(md){
+        @include spaceEvenly;
+      }
+      @include rwd(lg){
+        @include spaceEvenly;
+      }
+      @include rwd(xl){
+        @include spaceEvenly;
+      }
+      .weather-contentBlock{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: start;
+          align-items: center;
+          @include rwd(sm){
+            flex-basis: 50%;
+          }
+          @include rwd(md){
+            flex-basis: 50%;
+          }
+          @include rwd(lg){
+            flex-basis: 25%;
+          }
+          @include rwd(xl){
+            flex-basis: 20%;
+            justify-content: space-evenly;
+          }
+          .pic{
+            display: table-cell;
+            width: 40px;
+            margin-right: 4%;
+            line-height: 70px;
+            @include rwd(sm){
+              display: unset;
+              width: 50px;
+              height: 50px;
+              margin-right: unset;
+              background-color: $black;
+              border-radius: 50%;
+            }
+            @include rwd(md){
+              display: unset;
+              width: 60px;
+              height: 60px;
+              margin-right: unset;
+              background-color: $black;
+              border-radius: 50%;
+            }
+            @include rwd(lg){
+              display: unset;
+              width: 70px;
+              height: 70px;
+              margin-right: unset;
+              background-color: $black;
+              border-radius: 50%;
+            }
+            @include rwd(xl){
+              display: unset;
+              width: 70px;
+              height: 70px;
+              margin-right: unset;
+              background-color: $black;
+              border-radius: 50%;
+            }
+            img{ 
+              width: 30px;
+              @include rwd(md){
+                width: 30px;
+                vertical-align: middle;
+              }
+              @include rwd(lg){
+                width: 40px;
+                vertical-align: middle;
+              }
+              @include rwd(xl){
+                width: 40px;
+                vertical-align: middle;
+              }
+            }
+          }
+          .text{
+            flex: 0 0 auto;
+            color: $black;
+            letter-spacing: 2px;
+            line-height: $line_height_1;
+            font-weight: 600;
+            span{
+              font-size: $font_size_2;
+              @include rwd(md){
+                font-size: $font_size_2;
+              }
+              @include rwd(lg){
+                font-size: $font_size_3;
+              }
+              @include rwd(xl){
+                font-size: $font_size_3;
+              }
+              &:hover{
+                color: $whiteHover;
+              }
+            }
+            a{
+              font-size: $font_size_1;
+              @include rwd(md){
+                font-size: $font_size_2;
+              }
+              @include rwd(lg){
+                font-size: $font_size_2;
+              }
+              @include rwd(xl){
+                font-size: $font_size_3;
+              }
+              &:hover{
+                color: $whiteHover;
+              }
+            }
+          }
+      }
+    }
+  }
+}
+

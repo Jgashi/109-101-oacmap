@@ -1,0 +1,129 @@
+
+.customers-testimonials{
+  .item {
+  text-align: center;
+  opacity: .5;
+  transform: scale3d(0.8, 0.8, 1);
+  transition: all 0.3s ease-in-out;
+  vertical-align: middle;
+  cursor: pointer;
+  a{
+    display: block;
+  }
+  .shadow-effect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border:1px solid #ECECEC;
+    border-radius: $border_radius_3;
+    background: #fff;
+    @include rwd(sm){
+      padding: 20px;
+    }
+    @include rwd(md){
+      justify-content: center;
+      padding: 10px;
+    }
+    @include rwd(lg){
+      justify-content: center;
+      padding: 20px;
+    }
+    @include rwd(xl){
+      justify-content: center;
+      padding: 20px;
+    }
+    .img-circle{
+      margin: 0;
+      transform-style: preserve-3d;
+      width: 100%;
+      max-width: 60px;
+        @include rwd(lg){
+          width: 80%;
+          max-width: unset;
+        }
+        @include rwd(xl){
+          width: 80%;
+          max-width: unset;
+        }
+      }
+      p{
+        width: 75%;
+        height: 20vh;
+        overflow: auto;
+        text-align: left;
+        font-size: $font_size_2;
+        letter-spacing: 1px;
+        line-height: $line_height_2;
+        @include rwd(sm){
+          width: 69%;
+        }
+        @include rwd(md){
+          height: 15vh;
+        }
+        @include rwd(lg){
+          display: none;
+          height: 15vh;
+        }
+        @include rwd(xl){
+          display: none;
+        }
+      }
+    }
+  }
+
+  .testimonial-name {
+    display: table;
+    width: auto;
+    margin: -6px auto 0;
+    padding: 6px 15px;
+    font-size: $font_size_3;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: $border_radius_3;
+    cursor: pointer;
+    @include rwd(lg){
+      font-size: $font_size_4;
+    }
+    @include rwd(xl){
+      font-size: $font_size_4;
+    }
+    &:hover{
+      color: black;
+    }
+  }
+}
+.owl-item{
+  width: 360px;
+}
+.customers-testimonials .owl-item.active.center .item {
+  opacity: 1;
+  transform: scale3d(1.0, 1.0, 1);
+}
+.owl-carousel .owl-item img {
+
+  margin: 0 auto 17px;
+}
+.customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+.customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+  background: #3190E7;
+  transform: translate3d(0px, -10%, 0px) scale(0.7);
+}
+.customers-testimonials.owl-carousel .owl-dots{
+display: inline-block;
+width: 100%;
+text-align: center;
+}
+.customers-testimonials.owl-carousel .owl-dots .owl-dot{
+display: inline-block;
+}
+.customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+  background: #3190E7;
+  display: inline-block;
+  height: 20px;
+  margin: 0 2px 5px;
+  transform: translate3d(0px, -10%, 0px) scale(0.3);
+  transform-origin: 50% 50% 0;
+  transition: all 250ms ease-out 0s;
+  width: 20px;
+}

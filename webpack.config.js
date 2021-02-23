@@ -15,6 +15,7 @@ module.exports = {
     main: 'main',
     main2: 'main2',
   },
+  // target: 'node',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name]-[fullhash].js',
@@ -54,6 +55,7 @@ module.exports = {
       path.resolve('src/js'),
       path.resolve('src/js/object'),
       path.resolve('src/scss'),
+      path.resolve('src/css'),
       path.resolve('src/img'),
       path.resolve('src/img/leading_page'),
       path.resolve('src/img/lightbox_page'),
@@ -96,14 +98,12 @@ module.exports = {
         },
         include: path.resolve('.'),
       },
+
       {
-        test: /\.(wolf|wolf2|ttf|eot)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]?[hash:8]',
-          }
-        }]
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+        include: path.resolve('src/css'),
+        exclude: path.resolve('./node_modules'),
       },
       {
         test: /\.s[ac]ss$/i,
@@ -144,6 +144,15 @@ module.exports = {
         include: path.resolve('src/scss'),
         exclude: path.resolve('./node_modules'),
       },
+      {
+        test: /\.(wolf|wolf2|ttf|eot)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]?[hash:8]',
+          }
+        }]
+      },
     ],
     
   },
@@ -164,15 +173,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       // title: '海委會一站式入口網站',
       // viewport: 'width=device-width, initial-scale=1.0',
-      filename: 'index.html',
+      filename: 'index1.html',
       template: 'index.html',
       chunks: ['vender','main'],
     }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'index2.html',
-    //   template: 'index2.html',
-    //   chunks: ['vender','main2'],
-    // }),
+    new HtmlWebpackPlugin({
+      filename: 'index2.html',
+      template: 'index2.html',
+      chunks: ['vender','main2'],
+    }),
   ],
   // watch: true,
   watchOptions: {

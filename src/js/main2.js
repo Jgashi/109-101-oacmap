@@ -7,7 +7,7 @@
 // import 'stats.module';
 // import 'dat.gui.module';
 import * as THREE from 'three.module.js';
-import Stats from 'stats.module.js';
+// import Stats from 'stats.module.js';
 import { GUI } from 'dat.gui.module.js';
 
 import { OrbitControls } from 'OrbitControls.js';
@@ -15,7 +15,8 @@ import { Water } from 'Water.js';
 import { Sky } from 'Sky.js';
 import 'main.css';
 
-let container, stats;
+// let container, stats;
+let container;
 let camera, scene, renderer;
 let controls, water, sun, mesh;
 let waternormals = require('waternormals.jpg');
@@ -40,7 +41,7 @@ function init() {
   scene = new THREE.Scene();
 
   camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 20000 );
-  camera.position.set( 30, 30, 270 );
+  camera.position.set( 30, 50, 370 );
 
   //
 
@@ -113,11 +114,11 @@ function init() {
 
   //
 
-  const geometry = new THREE.BoxGeometry( 30, 30, 30 );
-  const material = new THREE.MeshStandardMaterial( { roughness: 0 } );
+  // const geometry = new THREE.BoxGeometry( 30, 30, 30 );
+  // const material = new THREE.MeshStandardMaterial( { roughness: 0 } );
 
-  mesh = new THREE.Mesh( geometry, material );
-  scene.add( mesh );
+  // mesh = new THREE.Mesh( geometry, material );
+  // scene.add( mesh );
 
   //
 
@@ -130,8 +131,8 @@ function init() {
 
   //
 
-  stats = new Stats();
-  container.appendChild( stats.dom );
+  // stats = new Stats();
+  // container.appendChild( stats.dom );
 
   // GUI
 
@@ -169,17 +170,17 @@ function animate() {
 
   requestAnimationFrame( animate );
   render();
-  stats.update();
+  // stats.update();
 
 }
 
 function render() {
 
-  const time = performance.now() * 0.001;
+  // const time = performance.now() * 0.001;
 
-  mesh.position.y = Math.sin( time ) * 20 + 5;
-  mesh.rotation.x = time * 0.5;
-  mesh.rotation.z = time * 0.51;
+  // mesh.position.y = Math.sin( time ) * 20 + 5;
+  // mesh.rotation.x = time * 0.5;
+  // mesh.rotation.z = time * 0.51;
 
   water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
 

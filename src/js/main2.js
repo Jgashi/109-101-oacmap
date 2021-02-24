@@ -9,7 +9,6 @@
 import * as THREE from 'three.module.js';
 import Stats from 'stats.module.js';
 import { GUI } from 'dat.gui.module.js';
-import '../img/waternormals.jpg';
 
 import { OrbitControls } from 'OrbitControls.js';
 import { Water } from 'Water.js';
@@ -19,6 +18,8 @@ import 'main.css';
 let container, stats;
 let camera, scene, renderer;
 let controls, water, sun, mesh;
+let waternormals = require('waternormals.jpg');
+let url = waternormals;
 
 init();
 animate();
@@ -39,7 +40,7 @@ function init() {
   scene = new THREE.Scene();
 
   camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 20000 );
-  camera.position.set( 30, 30, 100 );
+  camera.position.set( 30, 30, 270 );
 
   //
 
@@ -54,7 +55,7 @@ function init() {
     {
       textureWidth: 512,
       textureHeight: 512,
-      waterNormals: new THREE.TextureLoader().load( '../img/waternormals.jpg', function ( texture ) {
+      waterNormals: new THREE.TextureLoader().load( url, function ( texture ) {
 
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
@@ -80,14 +81,14 @@ function init() {
 
   const skyUniforms = sky.material.uniforms;
 
-  skyUniforms[ 'turbidity' ].value = 10;
-  skyUniforms[ 'rayleigh' ].value = 2;
+  skyUniforms[ 'turbidity' ].value = 1;
+  skyUniforms[ 'rayleigh' ].value = 1;
   skyUniforms[ 'mieCoefficient' ].value = 0.005;
   skyUniforms[ 'mieDirectionalG' ].value = 0.8;
 
   const parameters = {
-    inclination: 0.49,
-    azimuth: 0.205
+    inclination: 0.5,
+    azimuth: 0.3243
   };
 
   const pmremGenerator = new THREE.PMREMGenerator( renderer );

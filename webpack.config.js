@@ -98,7 +98,10 @@ module.exports = {
         },
         include: path.resolve('.'),
       },
-
+      // {
+      //   test: /\.(hbs|handlebars)$/,
+      //   use: 'handlebars-loader'
+      // },  
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],

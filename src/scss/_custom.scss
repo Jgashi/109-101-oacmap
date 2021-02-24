@@ -45,6 +45,14 @@ $h2-font-size: 2rem;
 		}
   }
 }
+#container{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}
+
 
 
 .header{

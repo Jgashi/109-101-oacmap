@@ -1,12 +1,11 @@
 import {
 	BackSide,
 	BoxGeometry,
-	Color,
 	Mesh,
 	ShaderMaterial,
 	UniformsUtils,
 	Vector3
-} from './three.module.js';
+} from 'three.module';
 
 /**
  * Based on "A Practical Analytic Model for Daylight"
@@ -26,20 +25,20 @@ var Sky = function () {
 
 	var shader = Sky.SkyShader;
 
-	var material = new ShaderMaterial({
+	var material = new ShaderMaterial( {
 		name: 'SkyShader',
 		fragmentShader: shader.fragmentShader,
 		vertexShader: shader.vertexShader,
-		uniforms: UniformsUtils.clone(shader.uniforms),
+		uniforms: UniformsUtils.clone( shader.uniforms ),
 		side: BackSide,
 		depthWrite: false
-	});
+	} );
 
-	Mesh.call(this, new BoxGeometry(1, 1, 1), material);
+	Mesh.call( this, new BoxGeometry( 1, 1, 1 ), material );
 
 };
 
-Sky.prototype = Object.create(Mesh.prototype);
+Sky.prototype = Object.create( Mesh.prototype );
 
 Sky.SkyShader = {
 
@@ -49,9 +48,7 @@ Sky.SkyShader = {
 		'mieCoefficient': { value: 0.005 },
 		'mieDirectionalG': { value: 0.8 },
 		'sunPosition': { value: new Vector3() },
-		'up': { value: new Vector3(0, 1, 0) },
-		'sunColor': { type: "c", value: new Color(0xeeeeee) },
-		'groundColor': { type: "c", value: new Color(0xffffff) },
+		'up': { value: new Vector3( 0, 1, 0 ) }
 	},
 
 	vertexShader: [
@@ -60,7 +57,6 @@ Sky.SkyShader = {
 		'uniform float turbidity;',
 		'uniform float mieCoefficient;',
 		'uniform vec3 up;',
-		'uniform vec3 sunColor;',
 
 		'varying vec3 vWorldPosition;',
 		'varying vec3 vSunDirection;',
@@ -123,11 +119,10 @@ Sky.SkyShader = {
 		'	vBetaR = totalRayleigh * rayleighCoefficient;',
 
 		// mie coefficients
-		//'	vBetaM = totalMie( turbidity ) * mieCoefficient;',
-		'	vBetaM = sunColor * totalMie( turbidity ) * mieCoefficient;',
+		'	vBetaM = totalMie( turbidity ) * mieCoefficient;',
 
 		'}'
-	].join('\n'),
+	].join( '\n' ),
 
 	fragmentShader: [
 		'varying vec3 vWorldPosition;',
@@ -139,8 +134,6 @@ Sky.SkyShader = {
 
 		'uniform float mieDirectionalG;',
 		'uniform vec3 up;',
-		'uniform vec3 sunColor;',
-		'uniform vec3 groundColor;',
 
 		'const vec3 cameraPos = vec3( 0.0, 0.0, 0.0 );',
 
@@ -194,30 +187,22 @@ Sky.SkyShader = {
 		'	float mPhase = hgPhase( cosTheta, mieDirectionalG );',
 		'	vec3 betaMTheta = vBetaM * mPhase;',
 
-		//'	vec3 Lin = pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * ( 1.0 - Fex ), vec3( 1.5 ) );',
 		'	vec3 Lin = pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * ( 1.0 - Fex ), vec3( 1.5 ) );',
-		//'	Lin = clamp(vBetaM, vec3(0), vec3(vSunE));',
 		'	Lin *= mix( vec3( 1.0 ), pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * Fex, vec3( 1.0 / 2.0 ) ), clamp( pow( 1.0 - dot( up, vSunDirection ), 5.0 ), 0.0, 1.0 ) );',
-		'	Lin *= mix( groundColor, pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * Fex, vec3( 1.0 / 2.0 ) ), clamp( pow( 1.0 - dot( up, vSunDirection ), 5.0 ), 0.0, 1.0 ) );',
 
 		// nightsky
-		//'	float theta = acos( direction.y ); // elevation --> y-axis, [-pi/2, pi/2]',
-		//'	float phi = atan( direction.z, direction.x ); // azimuth --> x-axis [-pi/2, pi/2]',
-		//'	vec2 uv = vec2( phi, theta ) / vec2( 2.0 * pi, pi ) + vec2( 0.5, 0.0 );',
+		'	float theta = acos( direction.y ); // elevation --> y-axis, [-pi/2, pi/2]',
+		'	float phi = atan( direction.z, direction.x ); // azimuth --> x-axis [-pi/2, pi/2]',
+		'	vec2 uv = vec2( phi, theta ) / vec2( 2.0 * pi, pi ) + vec2( 0.5, 0.0 );',
 		'	vec3 L0 = vec3( 0.1 ) * Fex;',
 
 		// composition + solar disc
-//		'	float sundisk = smoothstep( sunAngularDiameterCos, sunAngularDiameterCos + 0.00002, cosTheta );',
-		//'	float sundisk = smoothstep( sunAngularDiameterCos, sunAngularDiameterCos + 0.01, cosTheta );',
-		//'	L0 += ( vSunE * 19000.0 * Fex ) * sundisk;',
-		//'	L0 += sunColor * sundisk;',
-		//'	L0 += ( vSunE * 19000.0 * Fex * sunColor ) * sundisk;',
+		'	float sundisk = smoothstep( sunAngularDiameterCos, sunAngularDiameterCos + 0.00002, cosTheta );',
+		'	L0 += ( vSunE * 19000.0 * Fex ) * sundisk;',
 
 		'	vec3 texColor = ( Lin + L0 ) * 0.04 + vec3( 0.0, 0.0003, 0.00075 );',
 
 		'	vec3 retColor = pow( texColor, vec3( 1.0 / ( 1.2 + ( 1.2 * vSunfade ) ) ) );',
-		//'	retColor = clamp(retColor, vec3(0), sunColor);',
-		//'	retColor = clamp(retColor, vec3(0), vec3(1.0));',
 
 		'	gl_FragColor = vec4( retColor, 1.0 );',
 
@@ -225,7 +210,7 @@ Sky.SkyShader = {
 		'#include <encodings_fragment>',
 
 		'}'
-	].join('\n')
+	].join( '\n' )
 
 };
 

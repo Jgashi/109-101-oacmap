@@ -1,116 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - shaders - ocean</title>
+		<title>海洋委員會一站式平台</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<!-- <link type="text/css" rel="stylesheet" href="./main.css"> -->
 	</head>
 	<body>
-		<div id="container"></div>
-		<div class="container-box">
-			<header class="header navbar navbar-light">
-				<div class="container">
-					<div class="col">
-						<a href="#" class="navbar-brand">
-							<img src="./img/logoOCA.png" class="d-inline-block align-top">
-							<p>海域遊憩活動一站式資訊平臺</p>
-						</a>
-					</div>
+		<section class="nav-wrapper container">
+			<p class="BrightGray">海洋委員會</p>
+			<h1 class="TealBlue">海域休憩活動一站式平台</h1>
+		</section>
+		<div class="item1 container">
+			<div class="row">
+				<div class="col-12">
+					<h3 class="TealBlue">活動申請</h3>
+					<h5 class="text-justify">為提供民眾方便友善之橫向連結資訊，目前提供相關磯釣活動申請、遊艇申辦服務流程說明、龜山島登島申請與台江公園國家水域等海灣活動需提供申請之流程
+					</h5>
 				</div>
-			</header>
-			<div class="marquee pb-md-2 container">
-				<marquee direction="left" speed="slow" behavior="loop">
-					<span>海上颱風警報:預測颱風的七級風暴風範圍可能侵襲台灣或金門、馬袓陸上時之前18小時，即發布「海上陸上颱風警報」。之後每隔1小時發布一次，必要時得加發之。</span>
-					<span>海上颱風警報:預測颱風的七級風暴風範圍可能侵襲台灣或金門、馬袓陸上時之前18小時，即發布「海上陸上颱風警報」。之後每隔1小時發布一次，必要時得加發之。</span>
-				</marquee>
 			</div>
-
-			<section class="section1 text-center">
-				<div class="container">
-						<div class="row">
-							<div class="col-sm-6 col-md-6 col-lg-4" id="activity">
-								<div class="section1-item mx-auto my-3 my-lg-2">
-									<img class="section-item-icon " src="./img/leading_page/application.png">
-								</div>
-								<button class="btn btn-primary">活動申請</button>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">基隆市島礁磯釣活動</h5>
+							<div class="card-text">
+								基隆市政府2020年推出【島礁磯釣證線上申請系統】，讓民眾更方便快速完成辦證，帶動島礁磯釣國際賽事與週邊相關產業發展。
 							</div>
-							<div class="col-sm-6 col-md-6 col-lg-4">
-								<div class="section-item mx-auto my-3 my-lg-2">
-									<img class="section-item-icon" src="./img/leading_page/warning.png">
-								</div>
-								<button class="btn btn-primary">
-									禁止水域<br>
-									礙航/射擊通報
-								</button>
-							</div>
-							<div class="col-sm-6 col-md-6 col-lg-4">
-								<div class="section1-item mx-auto my-3 my-lg-2">
-									<img class="section-item-icon" src="./img/leading_page/recreation.png">
-								</div>
-								<button class="btn btn-primary">遊憩查詢</button>
-							</div>
-							<div class="col-sm-6 col-md-6 col-lg-4" id="weatherPage">
-								<div class="section1-item mx-auto my-3 my-lg-2">
-									<img class="section-item-icon" src="./img/leading_page/weather.png">
-								</div>
-								<button class="btn btn-primary">氣象海情</button>
-							</div>
-							<a href="map.html?catelog=situation" class="col-sm-6 col-md-6 col-lg-4">
-									<div class="section1-item mx-auto my-3 my-lg-2">
-										<img class="section-item-icon" src="./img/leading_page/law.png">
-									</div>
-									<button class="btn btn-primary">法令資訊</button>
+							<a href="http://klfish.naffic.org.tw/webpad/webpad.aspx?EpfJdId9UuDR1K%2BD%2BQ4%2F70pgeh4ocITQ" class="card-link">
+								基隆區漁會官方網站
 							</a>
-							<a href="map.html?uuid=df595e60-6287-4623-8317-4b8d6f82e2e5" class="col-sm-6 col-md-6 col-lg-4">
-								<div class="section1-item mx-auto my-3 my-lg-2">
-									<img class="section-item-icon" src="./img/leading_page/cctv.svg">
-								</div>
-								<button class="btn btn-primary">海況影像</button>
+							<a href="https://www.icellars.tw/keelungreeffishing/auth/login.html" class="card-link">基隆市島礁磯釣活動申請入口
 							</a>
-							<a href="map.html" class="col-sm-6 col-md-6 col-lg-4">
-								<div class="section1-item mx-auto my-3 my-lg-2">
-									<img class="section-item-icon" src="./img/leading_page/taiwanmap.png">
-								</div>
-								<button class="btn btn-primary">進入地圖</button>
-							</a>
-						</div>
-				</div>
-			</section>
-			<section class="section2">
-				<div class="container mt-md-5">
-					<div class="row">
-						<div class="col-12 col-md-6">
-							<div class="card text-white bg-info mb-3">
-								<div class="card-body">
-									<h5 class="card-title">網站法規資訊</h5>
-									<p class="card-text">本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。
-
-										使用者不得將本系統所提供之資料內容或查詢結果作為任何形式之依據或主張，本會對於所有資料內容之正確性及完整性，皆不負擔保之責。使用者如因使用本系統之資料而受損害或損失，或因此導致使用者或第三人遭受損害或損失而遭求償者，本系統管理機關及各資料提供機關不負任何賠償或補償之責。
-					
-										若屬全面性禁止事項或禁止採捕海域動、植物，例如海洋保育署公告之保育物種、漁業署公告之禁用漁法或禁止採捕魚種，即使沒在個別海域之法令中敘述，仍屬應遵守之規定。
-					
-										使用者進入本系統，視同同意上開使用規範。本系統所有資料僅限正常查詢、瀏覽使用，未經本會同意之大量抄錄或複製資料行為，將依違反著作權法及妨礙電腦使用罪辦理。</p>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-
-			<footer>
-				<div class="container-fluid">
-					<div class="row no-gutters">
-						<h6 class="col-12 col-sm-2 col-md-2 col-lg-2">&copy海洋委員會</h6>
-						<h6 class="col-12 col-sm-4 col-sm-5 col-md-4 col-lg-4">高雄市前鎮區成功二路25號4樓</h6>
-						<h6 class="col-12 col-sm-2  col-md-2 col-lg-2">(07)338-1810</h6>
-						<h6 class="visits col-12 col-4 col-sm-3 ">
-							瀏覽人次:<p id="people" class="d-inline">2223</p>
-						</h6>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">遊艇申辦服務平台</h5>
+							<div class="card-text">
+								交通部航港局於2019年推出【遊艇申辦服務平台】。服務平台使用非常容易，只要登錄帳號、填寫進出港申請、申請泊位，即可等著收取email確認。
+							</div>
+							<a href="https://web02.mtnet.gov.tw/" class="card-link">
+								海港單一窗口服務平台
+							</a>								
+							<a href="https://ftz.mtnet.gov.tw/YBerth/Portal/Logout" class="card-link">
+								泊位資訊查詢
+							</a>
+						</div>
 					</div>
 				</div>
-			</footer>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">東北角龜山島登島</h5>
+							<div class="card-text">
+								龜山島各項申請查詢作業、船舶資訊、法規資訊、登島表單之線上申請系統。
+							</div>								
+							<a href="https://events.necoast-nsa.gov.tw/coast/index.aspx" class="card-link">
+								東北角龜山島登島官方網站
+							</a>
+							<a href="https://events.necoast-nsa.gov.tw/Coast/Application.aspx?a=2659" class="card-link">
+								登島線上申請
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">台江國家公園水域</h5>
+							<div class="card-text">
+								特別景觀區之「特一-北汕尾濕地特別景觀區」、「特五-曾文溪口特別景觀區」部分公共河道水域，一般管制區之「管一-鹽水溪水域一般管制區」部分水域、「管八-七股潟湖一般管制區」水域應向台江國家公園申請核准後始得從事水域遊憩活動。
+							</div>
+							<a href="https://www.tjnp.gov.tw/" class="card-link">
+								台江國家公園官方網站
+							</a>								
+							<a href="https://www.tjnp.gov.tw/PublicInformationDetail.aspx?Cond=83713bde-e4e4-4f5c-a8ad-ed4cc0d60c34" class="card-link">
+								活動申請須知
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h3 class="TealBlue">相關連結</h3>
+					<h5 class="text-justify">
+						提供漁船管理辦法、賞鯨指南PDF、藍色公路
+					</h5>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">娛樂漁船</h5>
+							<div class="card-text">
+								此為漁業署之娛樂漁業管理辦法條文連結，提供法條參考與相關文件。
+							</div>								
+							<a href="https://www.fa.gov.tw/cht/LawsCentralFisheries/content.aspx?id=17&chk=76cc8fe4-de25-4a4f-8a46-bdfd838601cc&param" class="card-link">
+								漁業署相關文件連結
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">賞鯨活動</h5>
+							<div class="card-text">
+								臺灣鯨豚資源豐富，全球80多種鯨豚中，有近30種曾出現於我國周遭海域，每年4月到10月間是臺灣的賞鯨季節，海保署透過「臺灣海域賞鯨指南」發布，以淺顯易懂的圖像文字，說明友善賞鯨重點原則，希望大家都能當個負責任的遊客，在開心賞鯨時，也瞭解如何減少賞鯨活動對於鯨豚族群造成衝擊，讓珍貴的鯨豚資源與賞鯨產業皆能永續發展。
+							</div>								
+							<a href="https://www.oca.gov.tw/ch/index.jsp" class="card-link">
+								海洋保育署官方網站
+							</a>
+							<a href="https://ftz.mtnet.gov.tw/YBerth/Portal/Logout" class="card-link">
+								賞鯨指南(PDF)
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">藍色公路</h5>
+							<div class="card-text">
+								藍色公路目前主要有兩條航線。一是基隆河，由大佳河濱公園碼頭出發至美堤碼頭、錫口碼頭，於內湖科技園區附近的河域再往返，主要以遊河為主，夜晚河畔建築物燈光以及橋上的光雕點綴，更能展現臺北都市之美；另外一條是淡水河，而在淡水河有五個乘船處，分別是大稻埕碼頭、關渡碼頭、淡水客船碼頭、淡水漁人碼頭、八里客船碼頭。
+							</div>								
+							<a href="https://www.riverfun.net/" class="card-link">
+								台北市藍色水路旅遊官方網站
+							</a>
+							<a href="https://www.cwb.gov.tw/V8/C/M/bluehighway_home.html" class="card-link">
+								中央氣象局藍色公路浪高、風級等級說明
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">撿拾漂流木</h5>
+							<div class="card-text">
+								林務局提供漂流木公文，須注意撿拾對象、區域、時間。撿拾後須到站登記才能搬運離開。
+							</div>								
+							<a href="https://www.forest.gov.tw/" class="card-link">
+								林務局官方網站
+							</a>
+							<a href="https://www.forest.gov.tw/Driftwood" class="card-link">
+								撿拾漂流木開放時間查詢
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">遊艇管理規則</h5>
+							<div class="card-text">
+								此為全國法規資料庫之【遊艇管理規則】法規，提供有需要之民眾查閱。
+							</div>								
+							<a href="https://law.moj.gov.tw/Index.aspx" class="card-link">
+								全國法規資料庫官方網站
+							</a>
+							<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0070069" class="card-link">
+								遊艇管理規則法規
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card mt-2">
+						<div class="card-body">
+							<h5 class="card-title">遊艇管理規則</h5>
+							<div class="card-text">
+								產險業者推出「海域活動綜合保險」商品，保障內容除了一般傷害保險與旅行平安險保障外，還增加民眾參與海域休憩活動可能面臨的傷害保障。
+							</div>								
+							<a href="http://www.nlia.org.tw/" class="card-link">
+								中華民國產物保險商業同業公會
+							</a>
+							<a href="http://www.nlia.org.tw/modules/tadnews/page.php?ncsn=130&nsn=912#A" class="card-link">
+								海域活動保險專區
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
+
+		<footer>
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <h6 class="col-4 col-sm-4 col-md-2 col-lg-2">&copy海洋委員會</h6>
+          <h6 class="col-8 col-sm-4 col-sm-5 col-md-4 col-lg-4">高雄市前鎮區成功二路25號4樓</h6>
+          <h6 class="col-12 col-sm-4  col-md-2 col-lg-2">(07)338-1810</h6>
+          <h6 class="col-12 col-4 col-sm-6 col-md-4">
+            瀏覽人次:<p id="people" class="d-inline">2223</p>
+          </h6>
+        </div>
+      </div>
+    </footer>
 	</body>
 </html>

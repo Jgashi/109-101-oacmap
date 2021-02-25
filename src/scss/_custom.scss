@@ -1,17 +1,17 @@
 $colors: (
-  fill: #a972cb,
-  pulse: #ef6eae, 
-  close: #ff7f82, 
-  raise: #f73636, 
-  up: #e4cb58, 
-  slide: #8fc866, 
-  offset: #19bc8b
+  TealBlue: #2B8099,
+  SeaSerpent: #59C0C5, 
+  SeaFoamGreen: #A8E0CA, 
+  Alabaster: #EEF1EA, 
+  Lotion: #FCFCFC, 
+  BrightGray: #E9E9E9
 );
 
 $enable-responsive-font-sizes: true;
 
 $font-size-base: 1rem;
 $h2-font-size: 2rem;
+
 
 @mixin rwd($breakpoint) {
   @if $breakpoint=="xl" {
@@ -45,12 +45,91 @@ $h2-font-size: 2rem;
 		}
   }
 }
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 10deg)};
+  }
+};
+
+
 #container{
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -9999;
+}
+
+p {  
+  color: var(--color);
+  transition: 0.25s;
+  // font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+  // &:hover,
+  // &:focus { 
+  //   border-color: var(--hover);
+  //   color: var(--hover);
+  // }
+}
+
+h1{
+  color: var(--color);
+  font-weight: bold;
+}
+
+h2{
+  color: var(--color);
+  font-weight: bold;
+}
+
+h3{
+  color: var(--color);
+  font-weight: bold;
+}
+
+h4{
+  color: var(--color);
+  font-weight: bold;
+}
+
+h5{
+  color: var(--color);
+  font-weight: bold;
+}
+
+h6{
+  color: var(--color);
+  font-weight: bold;
+}
+
+
+.nav-wrapper{
+  min-width: 184px;
+  position: relative;
+  background-size: 4rem auto;
+  background-repeat: no-repeat;
+  // background-position: left top;
+}
+
+
+.box:before{
+  content: '';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,0.1);
+  transition:0.5s;
+  pointer-events: none;
+}
+
+.box:hover:before{
+  left:-50%;
+  transform: skewX(-5deg);
 }
 
 
@@ -96,29 +175,25 @@ $h2-font-size: 2rem;
   height: 7rem;
 }
 
-.activity{
-  display: none;
-}
+// .activity{
+//   display: none;
+// }
 
 .weather{
   display: none;
 }
 
-@each $button, $color in $colors {
-  .#{$button} {
-    --color: #{$color};
-    --hover: #{adjust-hue($color, 10deg)};
-  }
-};
 
-body{
-  text-align: center;
+.bi-alarm{
+  font-size: 2rem;
 }
 
-
 a{
-  display: block;
   text-decoration: none;
 }
 
-
+.card-text{
+  a{
+    display: inline-block;
+  }
+}

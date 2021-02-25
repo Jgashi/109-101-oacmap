@@ -194,10 +194,9 @@ Sky.SkyShader = {
 		'	float mPhase = hgPhase( cosTheta, mieDirectionalG );',
 		'	vec3 betaMTheta = vBetaM * mPhase;',
 
-		//'	vec3 Lin = pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * ( 1.0 - Fex ), vec3( 1.5 ) );',
 		'	vec3 Lin = pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * ( 1.0 - Fex ), vec3( 1.5 ) );',
 		//'	Lin = clamp(vBetaM, vec3(0), vec3(vSunE));',
-		'	Lin *= mix( vec3( 1.0 ), pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * Fex, vec3( 1.0 / 2.0 ) ), clamp( pow( 1.0 - dot( up, vSunDirection ), 5.0 ), 0.0, 1.0 ) );',
+		//'	Lin *= mix( vec3( 1.0 ), pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * Fex, vec3( 1.0 / 2.0 ) ), clamp( pow( 1.0 - dot( up, vSunDirection ), 5.0 ), 0.0, 1.0 ) );',
 		'	Lin *= mix( groundColor, pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * Fex, vec3( 1.0 / 2.0 ) ), clamp( pow( 1.0 - dot( up, vSunDirection ), 5.0 ), 0.0, 1.0 ) );',
 
 		// nightsky
@@ -207,10 +206,8 @@ Sky.SkyShader = {
 		'	vec3 L0 = vec3( 0.1 ) * Fex;',
 
 		// composition + solar disc
-//		'	float sundisk = smoothstep( sunAngularDiameterCos, sunAngularDiameterCos + 0.00002, cosTheta );',
-		//'	float sundisk = smoothstep( sunAngularDiameterCos, sunAngularDiameterCos + 0.01, cosTheta );',
+		//'	float sundisk = smoothstep( sunAngularDiameterCos, sunAngularDiameterCos + 0.00002, cosTheta );',
 		//'	L0 += ( vSunE * 19000.0 * Fex ) * sundisk;',
-		//'	L0 += sunColor * sundisk;',
 		//'	L0 += ( vSunE * 19000.0 * Fex * sunColor ) * sundisk;',
 
 		'	vec3 texColor = ( Lin + L0 ) * 0.04 + vec3( 0.0, 0.0003, 0.00075 );',

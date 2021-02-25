@@ -16,7 +16,7 @@ import {
 	Vector3,
 	Vector4,
 	WebGLRenderTarget
-} from 'three.module';
+} from './three.module.js';
 
 /**
  * Work based on :
@@ -47,6 +47,8 @@ var Water = function ( geometry, options ) {
 	var distortionScale = options.distortionScale !== undefined ? options.distortionScale : 20.0;
 	var side = options.side !== undefined ? options.side : FrontSide;
 	var fog = options.fog !== undefined ? options.fog : false;
+	var transparent = options.transparent !== undefined ? options.transparent : false;
+	// var opacity = options.opacity !== undefined ? options.opacity : 1.0;
 
 	//
 
@@ -209,7 +211,8 @@ var Water = function ( geometry, options ) {
 		uniforms: UniformsUtils.clone( mirrorShader.uniforms ),
 		lights: true,
 		side: side,
-		fog: fog
+		fog: fog,
+		transparent: transparent,
 	} );
 
 	material.uniforms[ 'mirrorSampler' ].value = renderTarget.texture;

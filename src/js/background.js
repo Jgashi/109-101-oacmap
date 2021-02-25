@@ -1,17 +1,11 @@
-import 'jquery';
-import 'popper.js';
-import 'bootstrap';
-import 'style.scss';
+import * as THREE from 'three.module.js';
 
+import Stats from 'stats.module.js';
 
-import * as THREE from './three.module.js';
-
-import Stats from './stats.module.js';
-
-import { GUI } from './dat.gui.module.js';
-import { OrbitControls } from './OrbitControls.js';
-import { Water } from './Water.js';
-import { Sky } from './Sky.js';
+import { GUI } from 'dat.gui.module.js';
+import { OrbitControls } from 'OrbitControls.js';
+import { Water } from 'Water.js';
+import { Sky } from 'Sky.js';
 
 let container, stats;
 let camera, scene, renderer;
@@ -206,8 +200,3 @@ function render() {
   renderer.render( scene, camera );
 
 }
-
-import 'index';
-
-
-

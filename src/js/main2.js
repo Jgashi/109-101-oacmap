@@ -133,7 +133,7 @@ function init() {
   //renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMapping = THREE.LinearToneMapping;
   renderer.toneMappingExposure = 0.5;
-  document.body.appendChild( renderer.domElement );
+  container.appendChild( renderer.domElement );
 
   const controls = new OrbitControls( camera, renderer.domElement );
   controls.addEventListener( 'change', render );

@@ -4,11 +4,33 @@ $colors: (
   SeaFoamGreen: #A8E0CA, 
   Alabaster: #EEF1EA, 
   Lotion: #FCFCFC, 
-  BrightGray: #E9E9E9
+  BrightGray: #E9E9E9,
+  fill: #dac153,
 );
 
-$enable-responsive-font-sizes: true;
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 10deg)};
+  }
+};
+a {  
+  color: var(--color);
+  transition: .5s;
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
 
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 8rem var(--hover);
+}
+
+
+$enable-responsive-font-sizes: true;
 $font-size-base: 1rem;
 $h2-font-size: 2rem;
 
@@ -46,13 +68,10 @@ $h2-font-size: 2rem;
   }
 }
 
-@each $button, $color in $colors {
-  .#{$button} {
-    --color: #{$color};
-    --hover: #{adjust-hue($color, 10deg)};
-  }
-};
 
+.opacity{
+  background-color: #f8f9faad,
+}
 
 #container{
   display: block;
@@ -62,19 +81,79 @@ $h2-font-size: 2rem;
   z-index: -9999;
 }
 
-p {  
-  color: var(--color);
+p{  
+  // color: var(--color);
   transition: 0.25s;
-  // font-size: 1.25rem;
   margin: 0;
   padding: 0;
-  // &:hover,
-  // &:focus { 
-  //   border-color: var(--hover);
-  //   color: var(--hover);
-  // }
 }
 
+.btn{
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  // border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  &:hover,
+  &:focus {
+    background-color: var(--hover); 
+    // border-color: var(--hover);
+    color: white;
+  }
+}
+
+
+.btn2{
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  // color: var(--color);
+  color: $gray-100;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  // background-color: transparent;
+  background-color: var(--color);
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1.5rem;
+  border-radius: 0.25rem;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  &:hover,
+  &:focus {
+    // background-color: var(--hover); 
+    background-color: $gray-100;
+    // border-color: var(--hover);
+    color: var(--color);
+  }
+}
+
+
+// a{
+//   // color: var(--color);
+//   background-color: transparent;
+//   border: 1px solid transparent;
+//   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+//   &:hover,
+//   &:focus {
+//     background-color: var(--hover); 
+//     // background-color: $gray-100;
+//     border-color: var(--hover);
+//     // color: var(--color);
+//   }
+// }
 h1{
   color: var(--color);
   font-weight: bold;
@@ -111,70 +190,97 @@ h6{
   position: relative;
   background-size: 4rem auto;
   background-repeat: no-repeat;
-  // background-position: left top;
 }
 
-// .item1{
-//   display: none;
+.nav-bg{
+  @include rwd(''){
+    display: none;
+  }
+  @include rwd(ssm){
+    display: none;
+  }
+  @include rwd(sm){
+    display: none;
+  }
+  @include rwd(md){
+    display: none;
+  }
+  @include rwd(lg){
+    display: flex;
+  }
+  @include rwd(xl){
+    display: flex;
+  }
+}
+
+// .box:before{
+//   content: '';
+//   position:absolute;
+//   top:0;
+//   left:-100%;
+//   width:100%;
+//   height:100%;
+//   background: rgba(255,255,255,0.1);
+//   transition:0.5s;
+//   pointer-events: none;
 // }
 
-.box:before{
-  content: '';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background: rgba(255,255,255,0.1);
-  transition:0.5s;
-  pointer-events: none;
-}
-
-.box:hover:before{
-  left:-50%;
-  transform: skewX(-5deg);
-}
+// .box:hover:before{
+//   left:-50%;
+//   transform: skewX(-5deg);
+// }
 
 
 
-.header{
-  .navbar-brand{
-    @include rwd(''){
-      font-size: 1rem;
+.navbar-brand{
+  @include rwd(''){
+    font-size: 1rem;
+  }
+  @include rwd(md){
+    font-size: 1.25rem;
+  }
+  @include rwd(lg){
+    font-size: 1.5rem;
+  }
+  @include rwd(xl){
+    font-size: 1.5rem;
+  }
+  img{
+    width: 50px;
+    @include rwd(sm){
+      width: 70px;
     }
     @include rwd(md){
-      font-size: 1.25rem;
+      width: 90px;
     }
     @include rwd(lg){
-      font-size: 1.5rem;
+      width: 90px;
     }
     @include rwd(xl){
-      font-size: 1.5rem;
-    }
-    img{
-      width: 50px;
-      @include rwd(sm){
-        width: 70px;
-      }
-      @include rwd(md){
-        width: 90px;
-      }
-      @include rwd(lg){
-        width: 90px;
-      }
-      @include rwd(xl){
-        width: 90px;
-      }
+      width: 90px;
     }
   }
 }
 
-
-.section-item{
-  max-width: 7rem;
+.btn-group{
+  @include rwd(''){
+    display: block;
+  }
+  @include rwd(md){
+    display: block;
+  }
+  @include rwd(lg){
+    display: none;
+  }
+  @include rwd(xl){
+    display: none;
+  }
 }
 
+
+
 .section-item-icon{
+  width: 7rem;
   height: 7rem;
 }
 
@@ -200,3 +306,64 @@ a{
     display: inline-block;
   }
 }
+
+
+
+
+// $my-primary:       #2B8099;
+// $my-secondary:     #59C0C5;
+// $my-third:         #A8E0CA;
+// $my-fore:         #EEF1EA;
+// $my-five:         #FCFCFC;
+// $my-six:         #E9E9E9;
+
+
+// $theme-colors: (
+//   "primary": $my-primary,
+//   "secondary": $my-secondary,
+//   "third": $my-third,
+//   "fore": $my-fore,
+//   "five": $my-five,
+//   "six": $my-six,
+//   "success": $green-300,
+//   "warning": $yellow-300,
+//   "light-gray": $gray-300,
+//   "dark-gray": $gray-700,
+// );
+
+// $utilities: (
+//   "opacity": (
+//     property: opacity,
+//     responsive: true,
+//     values: (
+//       0: 0,
+//       10: .1,
+//       20: .2,
+//       25: .25,
+//       50: .5,
+//       60: .6,
+//       75: .75,
+//       80: .8,
+//       100: 1,
+//     )
+//   )
+// );
+
+// $utilities: (
+//   "opacity": (
+//     property: opacity,
+//     responsive: true,
+//     stat: hover,
+//     values: (
+//       0: 0,
+//       10: .1,
+//       20: .2,
+//       25: .25,
+//       50: .5,
+//       60: .6,
+//       75: .75,
+//       80: .8,
+//       100: 1,
+//     )
+//   )
+// );

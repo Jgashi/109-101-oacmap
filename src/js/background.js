@@ -79,15 +79,14 @@ function init() {
   // skyUniforms[ 'mieDirectionalG' ].value = 0.8;
 
   const parameters = {
-    turbidity: 3.5,
-    rayleigh: 0.123,
-    mieCoefficient: 0.007, //0.018,
-    mieDirectionalG: 0.995, //0.835,
-    inclination: 0.3164,
-    azimuth: 0.214,
-    // exposure: renderer.toneMappingExposure,
-    sunColor: 0xff3000,
-    groundColor: 0x8c7ef,
+    inclination: 0.2835,    //0.3164
+    azimuth: 0.2471,         //0.214
+    turbidity: 0.6,         //3.5
+    rayleigh: 0.772,        //0.123
+    mieCoefficient: 0.067, //0.018,
+    mieDirectionalG: 0.843, //0.835,
+    sunColor: 0x441600,     //0xff3000
+    groundColor: 0x1c1c1c,   //0x8c7ef
   };
 
   const pmremGenerator = new THREE.PMREMGenerator( renderer );
@@ -142,31 +141,31 @@ function init() {
 
   // GUI
 
-  const gui = new GUI();
+  // const gui = new GUI();
 
-  const folderSky = gui.addFolder( 'Sky' );
-  gui.add( parameters, "turbidity", 0.0, 20.0, 0.1 ).onChange( updateSun );
-  gui.add( parameters, "rayleigh", 0.0, 4, 0.001 ).onChange( updateSun );
-  gui.add( parameters, "mieCoefficient", 0.0, 0.1, 0.001 ).onChange( updateSun );
-  gui.add( parameters, "mieDirectionalG", 0.0, 1, 0.001 ).onChange( updateSun );
-  folderSky.add( parameters, 'inclination', 0, 0.5, 0.0001 ).onChange( updateSun );
-  folderSky.add( parameters, 'azimuth', 0, 1, 0.0001 ).onChange( updateSun );
-  gui.addColor( parameters, "sunColor" ).onChange( updateSun );
-  gui.addColor( parameters, "groundColor" ).onChange( updateSun );
-  folderSky.open();
+  // const folderSky = gui.addFolder( 'Sky' );
+  // gui.add( parameters, "turbidity", 0.0, 20.0, 0.1 ).onChange( updateSun );
+  // gui.add( parameters, "rayleigh", 0.0, 4, 0.001 ).onChange( updateSun );
+  // gui.add( parameters, "mieCoefficient", 0.0, 0.1, 0.001 ).onChange( updateSun );
+  // gui.add( parameters, "mieDirectionalG", 0.0, 1, 0.001 ).onChange( updateSun );
+  // folderSky.add( parameters, 'inclination', 0, 0.5, 0.0001 ).onChange( updateSun );
+  // folderSky.add( parameters, 'azimuth', 0, 1, 0.0001 ).onChange( updateSun );
+  // gui.addColor( parameters, "sunColor" ).onChange( updateSun );
+  // gui.addColor( parameters, "groundColor" ).onChange( updateSun );
+  // folderSky.open();
 
-  const waterUniforms = water.material.uniforms;
+  // const waterUniforms = water.material.uniforms;
 
-  const folderWater = gui.addFolder( 'Water' );
-  folderWater.add( waterUniforms.distortionScale, 'value', 0, 8, 0.1 ).name( 'distortionScale' );
-  folderWater.add( waterUniforms.size, 'value', 0.1, 10, 0.1 ).name( 'size' );
-  folderWater.add( waterUniforms.alpha, 'value', 0.0, 1, .001 ).name( 'alpha' );
-  folderWater.add( water.material, 'transparent' ).name( 'transparent' );
-  folderWater.open();
+  // const folderWater = gui.addFolder( 'Water' );
+  // folderWater.add( waterUniforms.distortionScale, 'value', 0, 8, 0.1 ).name( 'distortionScale' );
+  // folderWater.add( waterUniforms.size, 'value', 0.1, 10, 0.1 ).name( 'size' );
+  // folderWater.add( waterUniforms.alpha, 'value', 0.0, 1, .001 ).name( 'alpha' );
+  // folderWater.add( water.material, 'transparent' ).name( 'transparent' );
+  // folderWater.open();
 
-  //
+  // //
 
-  window.addEventListener( 'resize', onWindowResize );
+  // window.addEventListener( 'resize', onWindowResize );
 
 }
 

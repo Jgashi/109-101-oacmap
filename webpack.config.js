@@ -176,13 +176,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       // title: '海委會一站式入口網站',
       // viewport: 'width=device-width, initial-scale=1.0',
-      filename: 'index1.html',
+      filename: 'index.html',
       template: 'index.html',
       chunks: ['vender','main'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'index2.html',
-      template: 'index2.html',
+      filename: 'insidePage.html',
+      template: 'insidePage.html',
       chunks: ['vender','main2'],
     }),
   ],

@@ -1,30 +1,28 @@
 //活動申請
 function showActBox(){
   $('#activity').on('click',function(){
-    $('.box-shadow').css('display','block');
     $('.activity').css('display','block');
   });
 }
 //氣象海情
 function showWeatherBox(){
   $('#weatherPage').on('click',function(){
-    $('.box-shadow').css('display','block');
     $('.weather').css('display','block');
   });
 };
 //關閉
-function closeBox(){
-  $('.fa-times').on('click',function(){
-    $('.box-shadow').css('display','none');
-    $('.activity').css('display','none');
-    $('.weather').css('display','none');
-  });
-  $('.box-shadow').on('click',function(){
-    $('.box-shadow').css('display','none');
-    $('.activity').css('display','none');
-    $('.weather').css('display','none');
-  });
-};
+// function closeBox(){
+//   $('.fa-times').on('click',function(){
+//     $('.box-shadow').css('display','none');
+//     $('.activity').css('display','none');
+//     $('.weather').css('display','none');
+//   });
+//   $('.box-shadow').on('click',function(){
+//     $('.box-shadow').css('display','none');
+//     $('.activity').css('display','none');
+//     $('.weather').css('display','none');
+//   });
+// };
 
 //內頁籤切換
 function tabChange(){

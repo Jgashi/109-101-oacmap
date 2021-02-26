@@ -5,7 +5,7 @@ $colors: (
   Alabaster: #EEF1EA, 
   Lotion: #FCFCFC, 
   BrightGray: #E9E9E9,
-  fill: #dac153,
+  fill: cadetblue,
 );
 
 @each $button, $color in $colors {
@@ -20,7 +20,11 @@ a {
   &:hover,
   &:focus { 
     border-color: var(--hover);
-    color: #fff;
+    color: #E9E9E9;
+    button{
+      background-color: $gray-100;
+      color: var(--color);
+    }
   }
 }
 
@@ -68,6 +72,45 @@ $h2-font-size: 2rem;
   }
 }
 
+.opacity{
+  a:nth-child(2n){
+    @include rwd(''){
+      background-color: mintcream;
+    }
+    @include rwd(ssm){
+      background-color: mintcream;
+    }
+    @include rwd(sm){
+      background-color: unset;
+    }
+    @include rwd(md){
+      background-color: unset;
+    }
+    @include rwd(lg){
+      background-color: mintcream;
+    }
+    @include rwd(xl){
+      background-color: unset;
+    }
+  }
+  
+  a:nth-child(2), a:nth-child(3), a:nth-child(6), a:nth-child(7){
+    @include rwd(sm){
+      background-color: mintcream;
+    }
+    @include rwd(md){
+      background-color: mintcream;
+    }
+  }
+  
+  a:nth-child(2), a:nth-child(4), a:nth-child(5), a:nth-child(7){
+    @include rwd(xl){
+      background-color: mintcream;
+    }
+  }
+}
+
+
 
 .opacity{
   background-color: #f8f9faad,
@@ -104,8 +147,7 @@ p{
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-  &:hover,
-  &:focus {
+  &:hover{
     background-color: var(--hover); 
     // border-color: var(--hover);
     color: white;
@@ -131,8 +173,7 @@ p{
   font-size: 1.5rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-  &:hover,
-  &:focus {
+  &:hover{
     // background-color: var(--hover); 
     background-color: $gray-100;
     // border-color: var(--hover);

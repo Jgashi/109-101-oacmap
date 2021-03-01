@@ -26,6 +26,7 @@ module.exports = {
     compress: true,
     open: true,
     hot: true,
+    port: 9000,
     contentBase: path.join(__dirname, 'dist'),
     writeToDisk: true,
     stats:{
@@ -116,6 +117,7 @@ module.exports = {
         }, {
           loader: MiniCssExtractPlugin.loader,
           options: {
+            publicPath: '../',
             esModule: false,
           },
         }, {

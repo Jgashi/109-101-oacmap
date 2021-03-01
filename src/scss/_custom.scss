@@ -267,11 +267,11 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-// .bg-img {
-//   background-image: url(../img/watercolor-background.jpg);
-//   background-repeat: no-repeat;
-//   background-size: contain;
-// }
+.bg-img {
+  background-image: url(../img/watercolor-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .Isometric {
   max-width: 100%;

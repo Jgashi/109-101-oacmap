@@ -185,6 +185,11 @@ module.exports = {
       template: 'insidePage.html',
       chunks: ['vender','main2'],
     }),
+    new HtmlWebpackPlugin({
+      filename: 'index2.html',
+      template: 'index2.html',
+      chunks: ['vender','main'],
+    }),
   ],
   // watch: true,
   watchOptions: {

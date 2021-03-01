@@ -165,7 +165,7 @@ function init() {
 
   // //
 
-  // window.addEventListener( 'resize', onWindowResize );
+  window.addEventListener( 'resize', onWindowResize );
 
 }
 

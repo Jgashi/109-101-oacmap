@@ -6,126 +6,30 @@
   <title>海委會一站式入口網站</title>
 </head>
 <body>
-  <!-- lightBox for weather_page-->
-  <div class="lightbox weather">
-    <div class="container lightbox-container">
-      <i class="fas fa-times"></i>
-      <div class="weather-content">
-        <a class="weather-contentBlock" href="https://www.windy.com/?23.652,121.278,8">
-          <div class="pic">
-            <img src="./img/lightbox_page/windy.png">
-          </div>
-          <div class="text">
-            <span>Windy</span>
-            <p>(外部連結)</p>
-          </div>
-        </a>
-        <a class="weather-contentBlock" href="https://safesee.cwb.gov.tw/V2/">
-          <div class="pic">
-            <img src="./img/lightbox_page/cwb.png">
-          </div>
-          <div class="text">
-            <span>台灣氣象災防平台</span>
-            <p>(外部連結)</p>
-          </div>
-        </a>
-        <a class="weather-contentBlock" href="map.html?uuid=b7d12861-af3f-4cc0-847a-7d080ab03da0">
-          <div class="pic">
-            <img src="./img/lightbox_page/observatory.png">
-          </div>
-          <div class="text">
-            <span>商港觀測站</span>
-          </div>
-        </a>
-        <a class="weather-contentBlock" href="map.html?uuid=bc54a445-7b3d-43d1-80f9-10fbf5cec4b3">
-          <div class="pic">
-            <img src="./img/lightbox_page/forecast.png">
-          </div>
-          <div class="text">
-            <span>近海天氣預報</span>
-          </div>
-        </a>
-        <a class="weather-contentBlock" href="map.html?uuid=8794829d-4d5e-4ba0-9133-ddd61719a4df">
-          <div class="pic">
-            <img src="./img/lightbox_page/coastal.png">
-          </div>
-          <div class="text">
-            <span>沿海鄉鎮天氣預報</span>
-          </div>
-        </a>
-        <a class="weather-contentBlock" href="map.html?uuid=d48172cd-4ab4-4649-bcd1-1b0970827366">
-          <div class="pic">
-            <img src="./img/lightbox_page/occeanCurrent.png">
-          </div>
-          <div class="text">
-            <span>表面海流</span>
-          </div>
-        </a>
-        <a class="weather-contentBlock" href="map.html?uuid=ad990e52-379e-4e8f-89dd-e03e464b27f5">
-          <div class="pic">
-            <img src="./img/lightbox_page/tidal.png">
-          </div>
-          <div class="text">
-            <span>潮汐資訊</span>
-          </div>
-        </a>
-        <a class="weather-contentBlock" href="map.html?uuid=1a2ede8e-59cd-464f-b964-e44d1476f5fd">
-          <div class="pic">
-            <img src="./img/lightbox_page/quality.png">
-          </div>
-          <div class="text">
-            <span>海域水質</span>
-          </div>
-        </a>
-        <div class="weather-contentBlock">
-          <div class="pic">
-            <img src="./img/lightbox_page/wave.png">
-          </div>
-          <div class="text">
-            <span>波浪資訊</span>
-            <a href="map.html?uuid=2438f673-3a6e-4762-8529-6a2cadc84a51">浪高</a>
-            <a href="map.html?uuid=3322298e-bbe1-4a91-8d9f-7205c228bdcc">週期</a>
-            <a href="map.html?uuid=44d021b6-d010-49cc-b9a6-2fd816e9d50b">異常趨勢</a>
-          </div>
-        </div>
-        <div class="weather-contentBlock">
-          <div class="pic">
-            <img src="./img/lightbox_page/surfaceTemperature.png">
-          </div>
-          <div class="text">
-            <span>波浪資訊</span>
-            <a href="map.html?uuid=9f3c63b0-7fe7-493a-9995-0e70dc4ae5b9">溫度</a>
-            <a href="map.html?uuid=5a1cb7a2-2c28-4860-a4c8-80c057929ea1">高度</a>
-            <a href="map.html?uuid=4b5fb55a-3d4e-412c-a23b-c0d3b950e886">鹽度</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div id="container"></div>
   <header class="container">
     <div class="row">
       <a href="#" class="col-12 text-center navbar-brand Alabaster">
-        <img src="./img/logoOCA.png" class="d-inline-block align-top">
-        <h2>海域遊憩活動一站式資訊平臺</h2>
+        <img src="./img/LOGO.png" class="d-inline-block align-top">
       </a>
     </div>
   </header>
   <div class="container">
     <div class="row">
-      <marquee direction="left" speed="slow" behavior="loop" class="opacity">
-        <h5 >海上颱風警報:預測颱風的七級風暴風範圍可能侵襲台灣或金門、馬袓陸上時之前18小時，即發布「海上陸上颱風警報」。之後每隔1小時發布一次，必要時得加發之。</h5>
-      </marquee>
+      <p class="marquee">
+        <span class="py-1 px-2 rounded-pill">
+          海上颱風警報:預測颱風的七級風暴風範圍可能侵襲台灣或金門、馬袓陸上時之前18小時，即發布「海上陸上颱風警報」。之後每隔1小時發布一次，必要時得加發之。
+        </span>
+      </p>
     </div>
     <div class="row opacity text-center mt-2">
-      <a href="insidePage.html" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3" id="activity">
+      <a href="insidePage.html#tab1" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3 gopage active">
         <div class="my-3 my-lg-2">
           <img class="section-item-icon" src="./img/leading_page/application.png">
         </div>
         <button class="btn2 TealBlue">活動申請</button>
       </a>
-      <a href="insidePage.html" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3">
+      <a href="insidePage.html#tab2" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3 gopage">
         <div class="my-3 my-lg-2">
           <img class="section-item-icon" src="./img/leading_page/warning.png">
         </div>
@@ -134,13 +38,13 @@
           礙航/射擊通報
         </button>
       </a>
-      <a href="insidePage.html" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3">
+      <a href="insidePage.html#tab3" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3">
         <div class="  my-3 my-lg-2">
           <img class="section-item-icon" src="./img/leading_page/recreation.png">
         </div>
         <button class="btn2 TealBlue">遊憩查詢</button>
       </a>
-      <a href="insidePage.html" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3" id="weatherPage">
+      <a href="insidePage.html#tab4" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 fill p-3" id="weatherPage">
         <div class="  my-3 my-lg-2">
           <img class="section-item-icon" src="./img/leading_page/weather.png">
         </div>
@@ -165,19 +69,17 @@
         <button class="btn2 TealBlue">進入地圖</button>
       </a>
     </div>
-    <div class="row opacity opacity mt-2">
+    <div class="row opacity mt-2">
       <div class="col-12">
-        <div class="cardmy-3">
-          <div class="card-body">
-            <h4 class="card-title">網站法規資訊</h4>
-            <h5 class="card-text">本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。
+        <div class="my-3 p-2 bg-light rounded">
+          <h4>網站法規資訊</h4>
+          <p class="text-break">本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得<span id="dots">...</span><span class="more" id="more">，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。
 
-              使用者不得將本系統所提供之資料內容或查詢結果作為任何形式之依據或主張，本會對於所有資料內容之正確性及完整性，皆不負擔保之責。使用者如因使用本系統之資料而受損害或損失，或因此導致使用者或第三人遭受損害或損失而遭求償者，本系統管理機關及各資料提供機關不負任何賠償或補償之責。
-    
-              若屬全面性禁止事項或禁止採捕海域動、植物，例如海洋保育署公告之保育物種、漁業署公告之禁用漁法或禁止採捕魚種，即使沒在個別海域之法令中敘述，仍屬應遵守之規定。
-    
-              使用者進入本系統，視同同意上開使用規範。本系統所有資料僅限正常查詢、瀏覽使用，未經本會同意之大量抄錄或複製資料行為，將依違反著作權法及妨礙電腦使用罪辦理。</h5>
-          </div>
+            使用者不得將本系統所提供之資料內容或查詢結果作為任何形式之依據或主張，本會對於所有資料內容之正確性及完整性，皆不負擔保之責。使用者如因使用本系統之資料而受損害或損失，或因此導致使用者或第三人遭受損害或損失而遭求償者，本系統管理機關及各資料提供機關不負任何賠償或補償之責。
+  
+            若屬全面性禁止事項或禁止採捕海域動、植物，例如海洋保育署公告之保育物種、漁業署公告之禁用漁法或禁止採捕魚種，即使沒在個別海域之法令中敘述，仍屬應遵守之規定。
+  
+            使用者進入本系統，視同同意上開使用規範。本系統所有資料僅限正常查詢、瀏覽使用，未經本會同意之大量抄錄或複製資料行為，將依違反著作權法及妨礙電腦使用罪辦理。</span><h6 id="myBtn" style="cursor: pointer;">更多 </p>
         </div>
       </div>
     </div>

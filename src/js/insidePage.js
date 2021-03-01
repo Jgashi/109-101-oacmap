@@ -18,14 +18,15 @@ $('.tab').on('click', function (e) {
   
   e.preventDefault();
   
-  $(this).addClass('active');
-  $(this).siblings().removeClass('active');
-  $(this).parent().siblings().children().removeClass('active');
+  $(this).addClass('active'); //頁籤+active
+  $(this).siblings().removeClass('active'); //其他頁籤remove
+  $(this).parent().siblings().children().removeClass('active'); //手機板其他頁籤remove
   
   target = $(this).attr('href');
 
-  $('.tab-content > div').not(target).hide();
+  $('.tab-content > div').not(target).hide(); //其他頁籤內容hide
   
-  $(target).fadeIn(600);
-  
+  $(target).fadeIn(600); //頁切內容fadeIN
 });
+
+

@@ -18,10 +18,19 @@
 			<section class="container">
 				<div class="row">
 					<div class="col">
+						<!-- <select name="two" class="form-select" aria-label="Default select example">
+							<option selected>請選擇</option>
+							<option value="#tab1" class="tab active">活動申請</option>
+							<option value="#tab2" class="tab">禁止水域與礙航/射擊通報</option>
+							<option value="#tab3" class="tab">遊憩查詢</option>
+							<option value="#tab4" class="tab">氣象海情</option>
+							<option value="#tab5" class="tab">法令資訊</option>
+							<option value="#tab6" class="tab">海況影像</option>
+						</select> -->
 						<div class="dropdown">
 							<div class="btn-group">
-								<button class="btn2 btn-lg dropdown-toggle SeaSerpent mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-									
+								<button class="btn2 btn-lg dropdown-toggle SeaSerpent mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="buttontext">
+									活動申請
 								</button>
 								<ul class="dropdown-menu">
 									<li>
@@ -246,7 +255,9 @@
 									</div>
 									<div class="card-text">
 										<img src="./img/lightbox_page/Marketing _Isometric.svg" class="Isometric">
-										<button class="btn2 TealBlue">前往禁止水域圖台</button>
+										<a href="map.html?cate=force&uuid=df595e60-6287-4623-8317-4b8d6f82e2e5&panel=礙航/射擊通報">
+											<button class="btn2 TealBlue">前往禁止水域圖台</button>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -260,7 +271,9 @@
 									</div>
 									<div class="card-text">
 										<img src="./img/lightbox_page/Military_Isometric.svg" class="Isometric">
-										<button class="btn2 TealBlue">前往礙航、射擊通報圖台</button>
+										<a href="map.html?cate=force&uuid=df595e60-6287-4623-8317-4b8d6f82e2e5&panel=礙航/射擊通報">
+											<button class="btn2 TealBlue">前往礙航、射擊通報圖台</button>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -409,7 +422,9 @@
 									</div>
 									<div class="card-text text-center">
 										<img src="./img/lightbox_page/Book Lover_Isometric.svg" class="Isometric">
-										<button class="btn2 TealBlue">前往法令資訊圖台</button>
+										<a href="map.html?catelog=law">
+											<button class="btn2 TealBlue">前往法令資訊圖台</button>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -427,7 +442,9 @@
 									</div>
 									<div class="card-text text-center">
 										<img src="./img/lightbox_page/Surfing_Isometric.svg" class="Isometric">
-										<button class="btn2 TealBlue">前往海況影像圖台</button>
+										<a href="map.html">
+											<button class="btn2 TealBlue">前往海況影像圖台</button>
+										</a>
 									</div>
 								</div>
 							</div>

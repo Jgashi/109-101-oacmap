@@ -73,6 +73,72 @@ $h2-font-size: 2rem;
   }
 }
 
+$grid-gutter-width: 2rem;
+
+// number of cards per line for each breakpoint
+$cards-per-line: (
+    xs: 1,
+    sm: 2,
+    md: 3,
+    lg: 4,
+    xl: 5,
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+	@media (min-width: $breakpoint) {
+		.card-deck .card {
+			flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+		}
+	}
+}
+
+.card-deck {
+  .card {
+    @include rwd(' '){
+      flex: 0 0 calc(100% - 2rem);
+    }
+    @include rwd('ssm'){
+      flex: 0 0 calc(50% - 2rem);
+    }
+    &:hover {
+      border-color: #0a58ca;
+    }
+  }
+}
+
+.card-body {
+  @include rwd(' '){
+    padding: 0;
+  }
+  @include rwd('ssm'){
+    padding: 0;
+  }
+  @include rwd('sm'){
+    padding: 0;
+  }
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex; /*使物件依序排列*/
+  flex-direction: column; /*使物件垂直排列*/
+}
+
+.wrapper {
+  flex-grow: 1; /*可佔滿垂直剩餘的空間*/
+}
+
+.wrapper-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .text-center {
   a:nth-child(2n) {
     @include rwd(''){
@@ -136,7 +202,6 @@ $h2-font-size: 2rem;
 }
 
 p {  
-  // color: var(--color);
   transition: 0.25s;
   margin: 0;
   padding: 0;
@@ -153,14 +218,12 @@ p {
   cursor: pointer;
   user-select: none;
   background-color: transparent;
-  // border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   &:hover{
     background-color: var(--hover); 
-    // border-color: var(--hover);
     color: white;
   }
 }
@@ -170,14 +233,12 @@ p {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
-  // color: var(--color);
   color: $gray-100;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  // background-color: transparent;
   background-color: var(--color);
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
@@ -185,9 +246,7 @@ p {
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   &:hover{
-    // background-color: var(--hover); 
     background-color: $gray-100;
-    // border-color: var(--hover);
     color: var(--color);
   }
 }
@@ -220,7 +279,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 @keyframes marquee {
-  0% { transform: translate(50%, 0); }
+  0% { transform: translate(100%, 0); }
   100% { transform: translate(-100%, 0); }
 }
 
@@ -284,18 +343,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .navbar-brand {
-  // @include rwd('') {
-  //   font-size: 1rem;
-  // }
-  // @include rwd(md) {
-  //   font-size: 1.25rem;
-  // }
-  // @include rwd(lg) {
-  //   font-size: 1.5rem;
-  // }
-  // @include rwd(xl) {
-  //   font-size: 1.5rem;
-  // }
   img {
     width: 100%;
     @include rwd(sm) {
@@ -336,6 +383,7 @@ h1, h2, h3, h4, h5, h6, p {
 .item4-icon {
   width: 6rem;
   height: 6rem;
+  margin: 1rem auto;
 }
 
 .weather {
@@ -420,7 +468,7 @@ a {
   &:hover{
     img {
       transform: scale(1);
-      filter: grayscale(0.6) blur(1px);
+      filter: grayscale(0.6);
     }
     a {
       h2 {

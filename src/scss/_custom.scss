@@ -271,6 +271,18 @@ h1, h2, h3, h4, h5, h6, p {
     /* show the marquee just outside the paragraph */
     will-change: transform;
     animation: marquee 30s linear infinite;
+    @include rwd(' ') {
+    animation: marquee2 20s linear infinite;
+    }
+    @include rwd('ssm') {
+      animation: marquee2 20s linear infinite;
+    }
+    @include rwd('sm') {
+      animation: marquee2 20s linear infinite;
+    }
+    @include rwd('md') {
+      animation: marquee3 23s linear infinite;
+    }
     &:hover {
       animation-play-state: paused
     }
@@ -280,9 +292,18 @@ h1, h2, h3, h4, h5, h6, p {
 
 @keyframes marquee {
   0% { transform: translate(100%, 0); }
-  100% { transform: translate(-100%, 0); }
+  100% { transform: translate(-105%, 0); }
 }
 
+@keyframes marquee2 {
+  0% { transform: translate(50%, 0); }
+  100% { transform: translate(-110%, 0); }
+}
+
+@keyframes marquee3 {
+  0% { transform: translate(80%, 0); }
+  100% { transform: translate(-110%, 0); }
+}
 
 /* Respect user preferences about animations */
 
@@ -386,9 +407,6 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 1rem auto;
 }
 
-.weather {
-  display: none;
-}
 
 
 .bi-alarm {
@@ -485,7 +503,10 @@ a {
 }
 
 
-
+.search {
+  max-width: 100%;
+  width: 48px;
+}
 
 
 

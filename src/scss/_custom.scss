@@ -15,7 +15,6 @@ $colors: (
   }
 };
 
-
 @mixin rwd($breakpoint) {
   @if $breakpoint=="xl" {
     @media all and (min-width: 1201px) {
@@ -42,10 +41,30 @@ $colors: (
 			@content;
 		}
   }
-  @else if $breakpoint=="" {
+  @else if $breakpoint=="tiny" {
     @media all and (max-width: 374px) {
 			@content;
 		}
+  }
+}
+
+.container1 {
+  margin: 0 auto;
+  max-width: 100%;
+  @include rwd('ssm'){
+    max-width: 540px;
+  }
+  @include rwd('sm'){
+    max-width: 720px;
+  }
+  @include rwd('md'){
+    max-width: 960px;
+  }
+  @include rwd('lg'){
+    max-width: 1140px;
+  }
+  @include rwd('xl'){
+    max-width: 1140px;
   }
 }
 
@@ -85,7 +104,6 @@ a {
       }
     }
   }
-
 }
 
 .fill:hover,
@@ -140,13 +158,24 @@ body {
 }
 
 
+
 .text-center {
+  a {
+    @include rwd(tiny){
+      flex: 0 0 auto;
+      width: 100%;
+    }
+    @include rwd(ssm){
+      flex: 0 0 auto;
+      width: 50%;
+    }
+  }
   a:nth-child(2n) {
-    @include rwd('tiny'){
+    @include rwd(tiny){
       background-color: mintcream;
     }
     @include rwd(ssm){
-      background-color: mintcream;
+      background-color: unset;
     }
     @include rwd(sm){
       background-color: unset;
@@ -163,6 +192,9 @@ body {
   }
   
   a:nth-child(2), a:nth-child(3), a:nth-child(6), a:nth-child(7){
+    @include rwd(ssm) {
+      background-color: mintcream;
+    }
     @include rwd(sm){
       background-color: mintcream;
     }
@@ -182,6 +214,9 @@ body {
     }
   }
   a:nth-child(2) {
+    @include rwd(ssm) {
+      border-radius: 0 30px 0 0;
+    }
     @include rwd(sm){
       border-radius: 0 30px 0 0;
     }
@@ -247,7 +282,7 @@ p {
   display: inline-block;
   height: 90px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.2;
   color: $gray-100;
   text-align: center;
   text-decoration: none;
@@ -256,8 +291,8 @@ p {
   user-select: none;
   background-color: var(--color);
   border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1.5rem;
+  padding: 0.75rem 0.75rem;
+  font-size: 1.2rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   @include rwd(md){
@@ -382,16 +417,16 @@ h1, h2, h3, h4, h5, h6, p {
   img {
     width: 100%;
     @include rwd(sm) {
-      width: 400px;
+      width: 500px;
     }
     @include rwd(md) {
-      width: 450px;
+      width: 600px;
     }
     @include rwd(lg) {
-      width: 500px;
+      width: 600px;
     }
     @include rwd(xl) {
-      width: 500px;
+      width: 600px;
     }
   }
 }
@@ -399,8 +434,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .section-item-icon {
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
 }
 
 .item4-icon {

@@ -350,16 +350,16 @@ h1, h2, h3, h4, h5, h6, p {
   img {
     width: 100%;
     @include rwd(sm) {
-      width: 400px;
+      width: 500px;
     }
     @include rwd(md) {
-      width: 450px;
+      width: 600px;
     }
     @include rwd(lg) {
-      width: 500px;
+      width: 600px;
     }
     @include rwd(xl) {
-      width: 500px;
+      width: 600px;
     }
   }
 }

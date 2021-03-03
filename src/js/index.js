@@ -64,8 +64,8 @@ function show(){
 }
 
 $(function() {
-  scrollTop(),
-  show(),
-  readMore()
+  scrollTop()
+  // show(),
+  // readMore()
 });
 

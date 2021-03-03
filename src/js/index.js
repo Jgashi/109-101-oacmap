@@ -1,30 +1,26 @@
-// //活動申請
-// function showActBox(){
-//   $('#activity').on('click',function(){
-//     $('.activity').css('display','block');
-//   });
-// }
-// //氣象海情
-// function showWeatherBox(){
-//   $('#weatherPage').on('click',function(){
-//     $('.weather').css('display','block');
-//   });
-// };
-
-// //內頁籤切換
-// function tabChange(){
-//     $(".tab").on("click", function(e){
-//     e.preventDefault();
-
-//     /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
-//     $(this).closest(".activity-tabList").find(".tab").removeClass("-on style-on");
-//     $(this).addClass("-on style-on");
-    
-//     /* 找到對應的頁籤內容，加上 -on 來顯示 */
-//     $(".activity-tabContents").removeClass("-on");
-//     $(".activity-tabContents." + $(this).attr("data-target")).addClass("-on");
-//   });
-// }
+function scrollTop() {
+  var scrollTop = $(".scrollTop");
+  
+  $(window).scroll(function() {
+    var topPos = $(this).scrollTop();
+  
+    if (topPos > 100) {
+      $(scrollTop).css("opacity", "1");
+  
+    } else {
+      $(scrollTop).css("opacity", "0");
+    }
+  
+  }); 
+  
+  $(scrollTop).click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 100);
+    return false;
+  
+  });
+}
 
 function readMore(){
   var dots = document.getElementById("dots");
@@ -68,13 +64,8 @@ function show(){
 }
 
 $(function() {
+  scrollTop(),
   show(),
   readMore()
-  // localStorage.setItem('myCat', 'Tom');
-  // showLow(),
-  // showWeatherBox(),
-  // showActBox(),
-  // tabChange()
 });
 
-// export { Portal };

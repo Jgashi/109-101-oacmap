@@ -3,4 +3,4 @@ import 'popper.js';
 import 'bootstrap';
 
 import 'insidePage.js';
-import 'style.scss';
+import 'style2.scss';

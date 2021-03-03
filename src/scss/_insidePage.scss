@@ -42,7 +42,7 @@ $colors: (
 			@content;
 		}
   }
-  @else if $breakpoint=="" {
+  @else if $breakpoint=="tiny" {
     @media all and (max-width: 374px) {
 			@content;
 		}
@@ -50,13 +50,11 @@ $colors: (
 }
 
 a {  
-  // color: var(--color);
   transition: .5s;
   @include rwd('md') {
     &:hover,
     &:focus { 
       border-color: var(--hover);
-      // color: #E9E9E9;
       button{
         background-color: $gray-100;
         color: var(--color);
@@ -67,7 +65,6 @@ a {
     &:hover,
     &:focus { 
       border-color: var(--hover);
-      // color: #E9E9E9;
       button{
         background-color: $gray-100;
         color: var(--color);
@@ -78,7 +75,6 @@ a {
     &:hover,
     &:focus { 
       border-color: var(--hover);
-      // color: #E9E9E9;
       button{
         background-color: $gray-100;
         color: var(--color);
@@ -87,27 +83,6 @@ a {
   }
 
 }
-
-.fill:hover,
-.fill:focus {
-  @include rwd('md') {
-    box-shadow: inset 0 0 0 10rem var(--hover);
-  }
-  @include rwd('lg') {
-    box-shadow: inset 0 0 0 9rem var(--hover);
-  }
-  @include rwd('xl') {
-    box-shadow: inset 0 0 0 9rem var(--hover);
-  }
-  
-}
-
-
-$enable-responsive-font-sizes: true;
-$font-size-base: 1rem;
-$h2-font-size: 2rem;
-
-
 
 $grid-gutter-width: 2rem;
 
@@ -120,13 +95,58 @@ $cards-per-line: (
     xl: 5,
 );
 
+@each $name, $breakpoint in $grid-breakpoints {
+	@media (min-width: $breakpoint) {
+		.card-deck .card {
+			flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+		}
+	}
+}
+
+.card-deck {
+  .card {
+    @include rwd('tiny'){
+      flex: 0 0 calc(100% - 2rem);
+    }
+    @include rwd('ssm'){
+      flex: 0 0 calc(50% - 2rem);
+    }
+    &:hover {
+      border-color: #0a58ca;
+    }
+  }
+}
+
+.card {
+  opacity: .8;
+}
+
+.card-body {
+  @include rwd('tiny'){
+    padding: 0;
+  }
+  @include rwd('ssm'){
+    padding: 0;
+  }
+  @include rwd('sm'){
+    padding: 0;
+  }
+}
+
+
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
+
 body {
   display: flex; /*使物件依序排列*/
   flex-direction: column; /*使物件垂直排列*/
+  background-image: url(../img/background5.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .wrapper {
@@ -221,31 +241,14 @@ p {
   padding: 0;
 }
 
-.btn {
+.inside-title {
   display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color);
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  background-color: transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1.2rem;
-  border-radius: 0.25rem;
-  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-  // &:hover{
-  //   background-color: var(--hover); 
-  //   color: white;
-  // }
+  background-color: aliceblue;
+  border-radius: 8px
 }
-
 
 .btn2 {
   display: inline-block;
-  height: 90px;
   font-weight: 400;
   line-height: 1.5;
   color: $gray-100;
@@ -286,96 +289,61 @@ h1, h2, h3, h4, h5, h6, p {
   cursor: context-menu;
 }
 
-.marquee {
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  box-sizing: border-box;
-  span {
-    display: inline-block;
-    width: max-content;
-    background-color: mintcream;
-    font-weight: 700;
-    padding-left: 100%;
-    /* show the marquee just outside the paragraph */
-    will-change: transform;
-    animation: marquee 30s linear infinite;
-    @include rwd('tiny') {
-    animation: marquee2 20s linear infinite;
-    }
-    @include rwd('ssm') {
-      animation: marquee2 20s linear infinite;
-    }
-    @include rwd('sm') {
-      animation: marquee2 20s linear infinite;
-    }
-    @include rwd('md') {
-      animation: marquee3 23s linear infinite;
-    }
-    &:hover {
-      animation-play-state: paused
-    }
+.nav-wrapper {
+  min-width: 184px;
+  position: relative;
+  background-size: 4rem auto;
+  background-repeat: no-repeat;
+}
+
+.nav-bg {
+  @include rwd('tiny') {
+    display: none;
+  }
+  @include rwd(ssm) {
+    display: none;
+  }
+  @include rwd(sm) {
+    display: none;
+  }
+  @include rwd(md) {
+    display: none;
+  }
+  @include rwd(lg) {
+    display: flex;
+  }
+  @include rwd(xl) {
+    display: flex;
   }
 }
 
-
-@keyframes marquee {
-  0% { transform: translate(100%, 0); }
-  100% { transform: translate(-105%, 0); }
-}
-
-@keyframes marquee2 {
-  0% { transform: translate(50%, 0); }
-  100% { transform: translate(-110%, 0); }
-}
-
-@keyframes marquee3 {
-  0% { transform: translate(80%, 0); }
-  100% { transform: translate(-110%, 0); }
-}
-
-/* Respect user preferences about animations */
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee span {
-    animation-iteration-count: 1;
-    animation-duration: 0.01; 
-    /* instead of animation: none, so an animationend event is 
-     * still available, if previously attached.
-     */
-    width: auto;
-    padding-left: 0;
-  }
-}
-
-.bd-radiustop-30 {
-  border-radius: 30px 30px 0 0;
+.bg-img {
+  background-image: url(../img/watercolor-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Isometric {
   max-width: 100%;
-  width: 230px;
-  height: 230px;
+  width: 220px;
+  height: 220px;
+  @include rwd(md) {
+    width: 320px;
+    height: 320px;
+  }
+  @include rwd(lg) {
+    width: 320px;
+    height: 320px;
+  }
+  @include rwd(xl) {
+    width: 320px;
+    height: 320px;
+  }
 }
 
 .border-4 {
   border: 4px solid #2B8099;
-}
-
-.scrollTop {
-  position: fixed;
-  right: 8%;
-  bottom: 10px;
-  background-color: #FCFCFC;
-  padding: 15px;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 999;
-  transition: all 0.4s ease-in-out 0s;
-  a {
-    color: #272727;
-    font-size: 18px;
-  }
+  background-color: #f0f8ffc5;
 }
 
 .navbar-brand {
@@ -396,11 +364,24 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-
+.btn-group{
+  @include rwd('tiny') {
+    display: block;
+  }
+  @include rwd(md) {
+    display: block;
+  }
+  @include rwd(lg) {
+    display: none;
+  }
+  @include rwd(xl) {
+    display: none;
+  }
+}
 
 .section-item-icon {
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: 7rem;
 }
 
 .item4-icon {
@@ -427,11 +408,11 @@ h1, h2, h3, h4, h5, h6, p {
       transform: translateX(-50%) scale(.8);
       margin-top: 0px;
       margin-bottom: 0px;
-      width: 230px;
-      height: 230px;
+      width: 220px;
+      height: 220px;
       border-radius: 100%;
       text-align: center;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       /*background dotted*/
       transition: all 0.5s linear;
       filter: alpha(opacity=0);
@@ -496,6 +477,21 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.scrollTop {
+  position: fixed;
+  right: 8%;
+  bottom: 10px;
+  background-color: #FCFCFC;
+  padding: 15px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.4s ease-in-out 0s;
+  a {
+    color: #272727;
+    font-size: 18px;
+  }
+}
 
 
 // $my-primary:       #2B8099;

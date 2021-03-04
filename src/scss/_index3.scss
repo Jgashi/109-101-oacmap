@@ -48,95 +48,20 @@ $colors: (
   }
 }
 
-.container1 {
-  margin: 0 auto;
-  max-width: 100%;
-  @include rwd('ssm'){
-    max-width: 540px;
-  }
-  @include rwd('sm'){
-    max-width: 720px;
-  }
-  @include rwd('md'){
-    max-width: 960px;
-  }
-  @include rwd('lg'){
-    max-width: 1140px;
-  }
-  @include rwd('xl'){
-    max-width: 1140px;
-  }
-}
 
-a {  
-  // color: var(--color);
-  transition: .5s;
-  @include rwd('md') {
-    &:hover,
-    &:focus { 
-      border-color: var(--hover);
-      // color: #E9E9E9;
-      button{
-        background-color: $gray-100;
-        color: var(--color);
-      }
-    }
-  }
-  @include rwd('lg') {
-    &:hover,
-    &:focus { 
-      border-color: var(--hover);
-      // color: #E9E9E9;
-      button{
-        background-color: $gray-100;
-        color: var(--color);
-      }
-    }
-  }
-  @include rwd('xl') {
-    &:hover,
-    &:focus { 
-      border-color: var(--hover);
-      // color: #E9E9E9;
-      button{
-        background-color: $gray-100;
-        color: var(--color);
-      }
-    }
-  }
-}
 
 .fill:hover,
 .fill:focus {
   @include rwd('md') {
-    box-shadow: inset 0 0 0 10rem var(--hover);
+    box-shadow: inset 0 0 0 1rem var(--hover);
   }
   @include rwd('lg') {
-    box-shadow: inset 0 0 0 9rem var(--hover);
+    box-shadow: inset 0 0 0 1rem var(--hover);
   }
   @include rwd('xl') {
-    box-shadow: inset 0 0 0 9rem var(--hover);
+    box-shadow: inset 0 0 0 1rem var(--hover);
   }
-  
 }
-
-
-$enable-responsive-font-sizes: true;
-$font-size-base: 1rem;
-$h2-font-size: 2rem;
-
-
-
-$grid-gutter-width: 2rem;
-
-// number of cards per line for each breakpoint
-$cards-per-line: (
-    xs: 1,
-    sm: 2,
-    md: 3,
-    lg: 4,
-    xl: 5,
-);
 
 html, body {
   height: 100%;
@@ -145,6 +70,10 @@ html, body {
 body {
   display: flex; /*使物件依序排列*/
   flex-direction: column; /*使物件垂直排列*/
+  background-image: url(../img/background4.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .wrapper {
@@ -161,6 +90,18 @@ body {
 
 .text-center {
   a {
+    flex-flow: column;
+    text-decoration: none;
+    div {
+      transition: .3s;
+      padding: 1.5rem 1.5rem;
+      background-color: aliceblue;
+      border-radius: 50%;
+      .section-item-icon {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
     @include rwd(tiny){
       flex: 0 0 auto;
       width: 100%;
@@ -168,63 +109,72 @@ body {
     @include rwd(ssm){
       flex: 0 0 auto;
       width: 50%;
+
+    }
+    @include rwd(md) {
+      &:hover,
+      &:focus {
+        div {
+          box-shadow: inset 0 0 0 1rem var(--hover);
+        }
+        button{
+          background-color: var(--hover) ;
+          color: $gray-100;
+        }
+      }
+    }
+    @include rwd(lg) {
+      &:hover,
+      &:focus { 
+        div {
+          box-shadow: inset 0 0 0 1rem var(--hover);
+        }
+        button{
+          background-color: var(--hover) ;
+          color: $gray-100;
+        }
+      }
+    }
+    @include rwd(xl) {
+      &:hover,
+      &:focus { 
+        div {
+          box-shadow: inset 0 0 0 1rem var(--hover);
+        }
+        button{
+          background-color: var(--hover) ;
+          color: $gray-100;
+        }
+      }
     }
   }
-  a:nth-child(2n) {
-    @include rwd(tiny){
-      background-color: mintcream;
-    }
-    @include rwd(ssm){
-      background-color: unset;
-    }
-    @include rwd(sm){
-      background-color: unset;
-    }
-    @include rwd(md){
-      background-color: unset;
-    }
-    @include rwd(lg){
-      background-color: mintcream;
-    }
-    @include rwd(xl){
-      background-color: mintcream;
-    }
-  }
-  
-  a:nth-child(2), a:nth-child(3), a:nth-child(6), a:nth-child(7){
-    @include rwd(ssm) {
-      background-color: mintcream;
-    }
-    @include rwd(sm){
-      background-color: mintcream;
-    }
-    @include rwd(md){
-      background-color: mintcream;
+  a:nth-child(2), a:nth-child(6), a:nth-child(7), a:nth-child(8) {
+    div {
+      padding: 1rem;
+      .section-item-icon {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+      }
     }
   }
   a:nth-child(1) {
-    border-radius: 30px 0 0 0;
-  }
-  a:nth-child(3) {
-    @include rwd(lg) {
-      border-radius: 0 30px 0 0; 
-    }
-    @include rwd(xl) {
-      border-radius: 0 30px 0 0; 
+    @include rwd(tiny) {
+      button {
+        color: #141414;
+      }
     }
   }
-  a:nth-child(2) {
+  a:nth-child(1), a:nth-child(2) {
     @include rwd(ssm) {
-      border-radius: 0 30px 0 0;
-    }
-    @include rwd(sm){
-      border-radius: 0 30px 0 0;
-    }
-    @include rwd(md){
-      border-radius: 0 30px 0 0;
+      button {
+        color: #141414;
+      }
     }
   }
 }
+
+
 
 .opacity {
   background-color: #f8f9faad;
@@ -258,9 +208,9 @@ p {
 
 .btn {
   display: inline-block;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.5;
-  color: var(--color);
+  color: $gray-100;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -271,27 +221,21 @@ p {
   font-size: 1.2rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-  // &:hover{
-  //   background-color: var(--hover); 
-  //   color: white;
-  // }
+
 }
 
 
 .btn2 {
-  display: inline-block;
-  height: 90px;
   font-weight: 400;
   line-height: 1.2;
   color: $gray-100;
   text-align: center;
   text-decoration: none;
-  vertical-align: middle;
   cursor: pointer;
   user-select: none;
   background-color: var(--color);
   border: 1px solid transparent;
-  padding: 0.75rem 0.75rem;
+  padding: 0.6rem 0.6rem;
   font-size: 1.2rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
@@ -329,7 +273,7 @@ h1, h2, h3, h4, h5, h6, p {
   span {
     display: inline-block;
     width: max-content;
-    background-color: mintcream;
+    background-color: aliceblue;
     font-weight: 700;
     padding-left: 100%;
     /* show the marquee just outside the paragraph */
@@ -401,20 +345,19 @@ h1, h2, h3, h4, h5, h6, p {
   position: fixed;
   right: 8%;
   bottom: 10px;
-  background-color: #FCFCFC;
-  padding: 15px;
+  background-color: #5f9ea0;
+  border-radius: 50%;
   opacity: 0;
   cursor: pointer;
   z-index: 999;
   transition: all 0.4s ease-in-out 0s;
-  a {
-    color: #272727;
-    font-size: 18px;
+  img {
+    width: 48px;
   }
 }
 
 .navbar-brand {
-  img {
+  .logo {
     width: 100%;
     @include rwd(sm) {
       width: 500px;
@@ -429,14 +372,29 @@ h1, h2, h3, h4, h5, h6, p {
       width: 600px;
     }
   }
+  .oca {
+    width: 60px;
+    @include rwd(ssm){
+      width: 80px;
+    }
+    @include rwd(sm){
+      width: 80px;
+    }
+    @include rwd(md){
+      width: 100px;
+    }
+    @include rwd(lg){
+      width: 100px;
+    }
+    @include rwd(xl){
+      width: 100px;
+    }
+  }
 }
 
 
 
-.section-item-icon {
-  width: 6rem;
-  height: 6rem;
-}
+
 
 .item4-icon {
   width: 6rem;
@@ -520,7 +478,6 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-
 .search {
   max-width: 100%;
   width: 44px;
@@ -530,63 +487,3 @@ h1, h2, h3, h4, h5, h6, p {
     transform: scale(1.2);
   }
 }
-
-
-
-// $my-primary:       #2B8099;
-// $my-secondary:     #59C0C5;
-// $my-third:         #A8E0CA;
-// $my-fore:         #EEF1EA;
-// $my-five:         #FCFCFC;
-// $my-six:         #E9E9E9;
-
-
-// $theme-colors: (
-//   "primary": $my-primary,
-//   "secondary": $my-secondary,
-//   "third": $my-third,
-//   "fore": $my-fore,
-//   "five": $my-five,
-//   "six": $my-six,
-//   "success": $green-300,
-//   "warning": $yellow-300,
-//   "light-gray": $gray-300,
-//   "dark-gray": $gray-700,
-// );
-
-// $utilities: (
-//   "opacity": (
-//     property: opacity,
-//     responsive: true,
-//     values: (
-//       0: 0,
-//       10: .1,
-//       20: .2,
-//       25: .25,
-//       50: .5,
-//       60: .6,
-//       75: .75,
-//       80: .8,
-//       100: 1,
-//     )
-//   )
-// );
-
-// $utilities: (
-//   "opacity": (
-//     property: opacity,
-//     responsive: true,
-//     stat: hover,
-//     values: (
-//       0: 0,
-//       10: .1,
-//       20: .2,
-//       25: .25,
-//       50: .5,
-//       60: .6,
-//       75: .75,
-//       80: .8,
-//       100: 1,
-//     )
-//   )
-// );

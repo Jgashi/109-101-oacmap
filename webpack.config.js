@@ -14,6 +14,7 @@ module.exports = {
   entry: {
     main: 'main',
     main2: 'main2',
+    main3: 'main3',
   },
   // target: 'node',
   output: {
@@ -191,6 +192,11 @@ module.exports = {
       filename: 'index2.html',
       template: 'index2.html',
       chunks: ['vender','main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index3.html',
+      template: 'index3.html',
+      chunks: ['vender','main3'],
     }),
   ],
   // watch: true,

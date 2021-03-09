@@ -49,6 +49,7 @@ $colors: (
   }
 }
 
+
 a {  
   transition: .5s;
   @include rwd('md') {
@@ -323,6 +324,14 @@ h1, h2, h3, h4, h5, h6, p {
   background-size: cover;
 }
 
+.tab-content {
+  .container {
+    .row {
+      align-items: baseline;
+    }
+  }
+}
+
 .Isometric {
   max-width: 100%;
   width: 220px;
@@ -348,7 +357,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .navbar-brand {
   .logo {
-    width: 100%;
+    width: 80%;
     @include rwd(sm) {
       width: 500px;
     }
@@ -526,73 +535,13 @@ h1, h2, h3, h4, h5, h6, p {
   position: fixed;
   right: 8%;
   bottom: 10px;
-  background-color: #FCFCFC;
-  padding: 15px;
+  background-color: #5f9ea0;
+  border-radius: 50%;
   opacity: 0;
   cursor: pointer;
   z-index: 999;
   transition: all 0.4s ease-in-out 0s;
-  a {
-    color: #272727;
-    font-size: 18px;
+  img {
+    width: 48px;
   }
 }
-
-
-// $my-primary:       #2B8099;
-// $my-secondary:     #59C0C5;
-// $my-third:         #A8E0CA;
-// $my-fore:         #EEF1EA;
-// $my-five:         #FCFCFC;
-// $my-six:         #E9E9E9;
-
-
-// $theme-colors: (
-//   "primary": $my-primary,
-//   "secondary": $my-secondary,
-//   "third": $my-third,
-//   "fore": $my-fore,
-//   "five": $my-five,
-//   "six": $my-six,
-//   "success": $green-300,
-//   "warning": $yellow-300,
-//   "light-gray": $gray-300,
-//   "dark-gray": $gray-700,
-// );
-
-// $utilities: (
-//   "opacity": (
-//     property: opacity,
-//     responsive: true,
-//     values: (
-//       0: 0,
-//       10: .1,
-//       20: .2,
-//       25: .25,
-//       50: .5,
-//       60: .6,
-//       75: .75,
-//       80: .8,
-//       100: 1,
-//     )
-//   )
-// );
-
-// $utilities: (
-//   "opacity": (
-//     property: opacity,
-//     responsive: true,
-//     stat: hover,
-//     values: (
-//       0: 0,
-//       10: .1,
-//       20: .2,
-//       25: .25,
-//       50: .5,
-//       60: .6,
-//       75: .75,
-//       80: .8,
-//       100: 1,
-//     )
-//   )
-// );

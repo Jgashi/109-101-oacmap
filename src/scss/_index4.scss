@@ -76,7 +76,11 @@ body {
 }
 
 .wrapper {
-  flex-grow: 1; /*可佔滿垂直剩餘的空間*/
+  flex-grow: 2; /*可佔滿垂直剩餘的空間*/
+}
+
+.side {
+  flex-grow: 1;
 }
 
 .wrapper-middle {
@@ -88,6 +92,9 @@ body {
 
 
 .main {
+  @include rwd(md) {
+    justify-content: center;
+  }
   a {
     flex-flow: column;
     text-decoration: none;
@@ -144,16 +151,6 @@ body {
       }
     }
   }
-  // a:nth-child(2), a:nth-child(6), a:nth-child(7), a:nth-child(8) {
-  //   div {
-  //     padding: 1rem;
-  //     .section-item-icon {
-  //       width: 7rem;
-  //       height: 7rem;
-  //       border-radius: 50%;
-  //     }
-  //   }
-  // }
   a:nth-child(1) {
     @include rwd(tiny) {
       button {
@@ -170,8 +167,17 @@ body {
   }
 }
 
+.side-item-icon {
+  width: 4rem;
+  height: 4rem;
+}
 
-
+.outside-frame {
+  text-shadow: -1px -1px 0 #000, 
+              1px -1px 0 #000,
+              -1px 1px 0 #000, 
+              1px 1px 0 #000;
+}
 .opacity {
   background-color: #f8f9faad;
 }
@@ -217,6 +223,9 @@ body {
   font-size: 1.2rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  &:hover {
+    color: white;
+  }
 }
 
 

@@ -14,7 +14,8 @@ module.exports = {
   entry: {
     main: 'main',
     main2: 'main2',
-    main3: 'main3',
+    // main3: 'main3',
+    main4: 'main4',
   },
   // target: 'node',
   output: {
@@ -100,10 +101,6 @@ module.exports = {
         },
         include: path.resolve('.'),
       },
-      // {
-      //   test: /\.(hbs|handlebars)$/,
-      //   use: 'handlebars-loader'
-      // },  
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
@@ -149,8 +146,7 @@ module.exports = {
         }],
         include: path.resolve('src/scss'),
         exclude: path.resolve('./node_modules'),
-      },
-      {
+      },{
         test: /\.(wolf|wolf2|ttf|eot)$/,
         use: [{
           loader: 'file-loader',
@@ -179,7 +175,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       // title: '海委會一站式入口網站',
       // viewport: 'width=device-width, initial-scale=1.0',
-      filename: 'index.html',
+      filename: 'index3.html',
       template: 'index.html',
       chunks: ['vender','main'],
     }),
@@ -194,9 +190,9 @@ module.exports = {
       chunks: ['vender','main'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'index3.html',
-      template: 'index3.html',
-      chunks: ['vender','main3'],
+      filename: 'index.html',
+      template: 'index4.html',
+      chunks: ['vender','main4'],
     }),
   ],
   // watch: true,

@@ -85,6 +85,13 @@ module.exports = {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           type: 'asset/resource',
       },
+      {      
+          test: /\.pdf$/,
+          type: 'asset/resource',
+          // generator: {
+          //   filename: 'static/[hash][ext][query]'
+          // }
+      },
       {
         test: /\.html$/,
         use: [{

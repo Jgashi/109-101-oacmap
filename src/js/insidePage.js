@@ -32,9 +32,8 @@ function tabChang() {
     $(this).parent().siblings().children().removeClass('active'); //手機板其他頁籤remove
     
     text = $(this).text();
-    console.log(text);
-    target = $(this).attr('href');
     $('#buttontext').text(text);
+    target = $(this).attr('href');
     $('.tab-content > div').not(target).hide(); //其他頁籤內容hide
     
     $(target).fadeIn(600); //頁切內容fadeIN

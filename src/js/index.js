@@ -63,9 +63,26 @@ function show(){
   }
 }
 
+function tabChang() {
+  $('.tab').on('click', function (e) {
+    // e.preventDefault();
+
+    $(this).addClass('active'); //頁籤+active
+    $(this).parent().siblings().children().removeClass('active'); //手機板其他頁籤remove
+
+    text = $(this).text();
+    $('#buttontext').text(text);
+  });
+}
+
+function tabText() {
+  text = $('.active').text();
+  $('#buttontext').text(text);
+}
+
 $(function() {
   scrollTop()
-  // show(),
-  // readMore()
+  tabText()
+  tabChang()
 });
 

@@ -24,6 +24,8 @@
     "css-loader": "^5.0.2",
     "dat.gui": "^0.7.7",
     "extract": "^1.0.0",
+    "favicons": "^6.2.1",
+    "favicons-webpack-plugin": "^5.0.2",
     "fibers": "^5.0.0",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.0",

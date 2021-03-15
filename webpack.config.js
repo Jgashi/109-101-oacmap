@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack'); 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin;
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 
 
@@ -200,6 +201,32 @@ module.exports = {
       filename: 'index.html',
       template: 'index4.html',
       chunks: ['vender','main4'],
+    }),
+    new FaviconsWebpackPlugin({
+      inject: true,
+      cache: true,
+      logo: './img/logoOCA.png', // svg works too!
+      mode: 'webapp', // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
+      // outputPath: './img/icons',
+      prefix: 'img/icons/',
+      devMode: 'webapp', // optional can be 'webapp' or 'light' - 'light' by default 
+      favicons: {
+        appName: '海域整合資訊',
+        appDescription: '海域遊憩平台一站式網站',
+        lang: "zh-Hant",
+        developerName: '詮華',
+        developerURL: null, // prevent retrieving from the nearest package.json
+        icons: {
+          android: false,              // Create Android homescreen icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+          appleIcon: false,            // Create Apple touch icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+          appleStartup: false,         // Create Apple startup images. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+          coast: false,                // Create Opera Coast icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+          favicons: true,             // Create regular favicons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+          firefox: false,              // Create Firefox OS icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+          windows: false,              // Create Windows 8 tile icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+          yandex: false,                // Create Yandex browser icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
+        }
+      }
     }),
   ],
   // watch: true,

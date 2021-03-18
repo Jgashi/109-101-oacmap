@@ -531,17 +531,3 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-.nav-bg {
-  display: none;
-  @include rwd(md) {
-    display: flex;
-  }
-  @include rwd(lg) {
-    display: flex;
-    justify-content: center;
-  }
-  @include rwd(xl) {
-    display: flex;
-    justify-content: center;
-  }
-}

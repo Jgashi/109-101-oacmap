@@ -6,6 +6,7 @@ $colors: (
   Lotion: #FCFCFC, 
   BrightGray: #E9E9E9,
   fill: cadetblue,
+  OrchidPurple: #814794,
 );
 
 @each $button, $color in $colors {
@@ -48,52 +49,18 @@ $colors: (
   }
 }
 
-a {  
-  transition: .5s;
-  @include rwd('md') {
-    &:hover,
-    &:focus { 
-      border-color: var(--hover);
-      button{
-        background-color: $gray-100;
-        color: var(--color);
-      }
-    }
-  }
-  @include rwd('lg') {
-    &:hover,
-    &:focus { 
-      border-color: var(--hover);
-      button{
-        background-color: $gray-100;
-        color: var(--color);
-      }
-    }
-  }
-  @include rwd('xl') {
-    &:hover,
-    &:focus { 
-      border-color: var(--hover);
-      button{
-        background-color: $gray-100;
-        color: var(--color);
-      }
-    }
-  }
-}
 
-.fill:hover,
-.fill:focus {
+
+.fill:hover{
   @include rwd('md') {
-    box-shadow: inset 0 0 0 10rem var(--hover);
+    box-shadow: inset 0 0 0 1rem var(--hover);
   }
   @include rwd('lg') {
-    box-shadow: inset 0 0 0 9rem var(--hover);
+    box-shadow: inset 0 0 0 1rem var(--hover);
   }
   @include rwd('xl') {
-    box-shadow: inset 0 0 0 9rem var(--hover);
+    box-shadow: inset 0 0 0 1rem var(--hover);
   }
-  
 }
 
 html, body {
@@ -103,10 +70,22 @@ html, body {
 body {
   display: flex; /*使物件依序排列*/
   flex-direction: column; /*使物件垂直排列*/
+  background-image: url(../img/background4.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.wrapper-top {
+  flex-grow: 1; /*可佔滿垂直剩餘的空間*/
 }
 
 .wrapper {
-  flex-grow: 1; /*可佔滿垂直剩餘的空間*/
+  flex-grow: 3; /*可佔滿垂直剩餘的空間*/
+}
+
+.side {
+  flex-grow: 1;
 }
 
 .wrapper-middle {
@@ -117,8 +96,23 @@ body {
 
 
 
-.text-center {
+.main {
+  @include rwd(md) {
+    justify-content: center;
+  }
   a {
+    flex-flow: column;
+    text-decoration: none;
+    div {
+      transition: .3s;
+      padding: 1.5rem 1.5rem;
+      background-color: aliceblue;
+      border-radius: 50%;
+      .section-item-icon {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
     @include rwd(tiny){
       flex: 0 0 auto;
       width: 100%;
@@ -127,63 +121,72 @@ body {
       flex: 0 0 auto;
       width: 50%;
     }
-  }
-  a:nth-child(2n) {
-    @include rwd(tiny){
-      background-color: mintcream;
-    }
-    @include rwd(ssm){
-      background-color: unset;
-    }
-    @include rwd(sm){
-      background-color: unset;
-    }
-    @include rwd(md){
-      background-color: mintcream;
-    }
-    @include rwd(lg){
-      background-color: mintcream;
-    }
-    @include rwd(xl){
-      background-color: mintcream;
-    }
-  }
-  
-  a:nth-child(2), a:nth-child(3), a:nth-child(6), a:nth-child(7){
-    @include rwd(ssm) {
-      background-color: mintcream;
-    }
-    @include rwd(sm){
-      background-color: mintcream;
-    }
-    // @include rwd(md){
-    //   background-color: mintcream;
-    // }
-  }
-  a:nth-child(1) {
-    border-radius: 30px 0 0 0;
-  }
-  a:nth-child(3) {
     @include rwd(md) {
-      border-radius: 0 30px 0 0; 
+      &:hover{
+        div {
+          box-shadow: inset 0 0 0 1rem var(--hover);
+        }
+        button{
+          background-color: adjust-hue($color: #814794, $degrees: 10) ;
+          color: $gray-100;
+        }
+      }
     }
     @include rwd(lg) {
-      border-radius: 0 30px 0 0; 
+      &:hover{ 
+        div {
+          box-shadow: inset 0 0 0 1rem var(--hover);
+        }
+        button{
+          background-color: adjust-hue($color: #814794, $degrees: 10) ;
+          color: $gray-100;
+        }
+      }
     }
     @include rwd(xl) {
-      border-radius: 0 30px 0 0; 
+      &:hover{ 
+        div {
+          box-shadow: inset 0 0 0 1rem var(--hover);
+        }
+        button{
+          background-color: adjust-hue($color: #814794, $degrees: 10);
+          color: $gray-100;
+        }
+      }
     }
   }
-  a:nth-child(2) {
-    @include rwd(ssm) {
-      border-radius: 0 30px 0 0;
+  a:nth-child(1) {
+    @include rwd(tiny) {
+      button {
+        color: #141414;
+      }
     }
-    @include rwd(sm){
-      border-radius: 0 30px 0 0;
+  }
+  a:nth-child(1), a:nth-child(2) {
+    @include rwd(ssm) {
+      button {
+        color: #141414;
+      }
+    }
+    @include rwd(sm) {
+      button {
+        color: #141414;
+      }
     }
   }
 }
 
+.side-item-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.outside-frame {
+  text-shadow: -1px -1px 0 #000, 
+              1px -1px 0 #000,
+              -1px 1px 0 #000, 
+              1px 1px 0 #000;
+}
 .opacity {
   background-color: #f8f9faad;
 }
@@ -208,15 +211,15 @@ body {
   z-index: -9999;
 }
 
-p {  
-  transition: 0.25s;
-  margin: 0;
-  padding: 0;
+.bg-img {
+  background-image: url(../img/watercolor-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .btn {
   display: inline-block;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.5;
   color: var(--color);
   text-align: center;
@@ -229,22 +232,23 @@ p {
   font-size: 1.2rem;
   border-radius: 0.25rem;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-  // &:hover{
-  //   background-color: var(--hover); 
-  //   color: white;
-  // }
+  &:hover {
+    color: var(--hover);
+  }
 }
 
+.scoll {
+  &:hover {
+    transform: scale(1.2);
+  }
+}
 
 .btn2 {
-  display: inline-block;
-  height: 70px;
   font-weight: 400;
   line-height: 1.2;
   color: $gray-100;
   text-align: center;
   text-decoration: none;
-  vertical-align: middle;
   cursor: pointer;
   user-select: none;
   background-color: var(--color);
@@ -287,7 +291,7 @@ h1, h2, h3, h4, h5, h6, p {
   span {
     display: inline-block;
     width: max-content;
-    background-color: mintcream;
+    background-color: aliceblue;
     font-weight: 700;
     padding-left: 100%;
     /* show the marquee just outside the paragraph */
@@ -374,10 +378,10 @@ h1, h2, h3, h4, h5, h6, p {
   .logo {
     width: 80%;
     @include rwd(sm) {
-      width: 500px;
+      width: 400px;
     }
     @include rwd(md) {
-      width: 600px;
+      width: 500px;
     }
     @include rwd(lg) {
       width: 600px;
@@ -406,10 +410,26 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-.section-item-icon {
-  width: 6rem;
-  height: 6rem;
+
+.nav-bar {
+  display: none;
+  @include rwd(md){
+    display: flex;
+  }
+  @include rwd(lg){
+    display: flex;
+  }
+  @include rwd(xl){
+    display: flex;
+  }
+  .col {
+    border-right: 2px solid #2B8099;
+  }
+  .col:last-child {
+    border-right: 0;
+  }
 }
+
 
 .item4-icon {
   width: 6rem;
@@ -502,3 +522,20 @@ h1, h2, h3, h4, h5, h6, p {
     transform: scale(1.2);
   }
 }
+
+
+.btn-group{
+  @include rwd('tiny') {
+    display: block;
+  }
+  @include rwd(md) {
+    display: none;
+  }
+  @include rwd(lg) {
+    display: none;
+  }
+  @include rwd(xl) {
+    display: none;
+  }
+}
+

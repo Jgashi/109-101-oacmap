@@ -13,10 +13,9 @@ module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, "./src"),
   entry: {
+    // main: 'main',
+    // main2: 'main2',
     main: 'main',
-    main2: 'main2',
-    // main3: 'main3',
-    main4: 'main4',
   },
   // target: 'node',
   output: {
@@ -89,9 +88,6 @@ module.exports = {
       {      
           test: /\.pdf$/,
           type: 'asset/resource',
-          // generator: {
-          //   filename: 'static/[hash][ext][query]'
-          // }
       },
       {
         test: /\.html$/,
@@ -181,26 +177,9 @@ module.exports = {
       '**/*.css' : 'text/css'
     }),
     new HtmlWebpackPlugin({
-      // title: '海委會一站式入口網站',
-      // viewport: 'width=device-width, initial-scale=1.0',
-      filename: 'index3.html',
+      filename: 'index.html',
       template: 'index.html',
       chunks: ['vender','main'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'insidePage.html',
-      template: 'insidePage.html',
-      chunks: ['vender','main2'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index2.html',
-      template: 'index2.html',
-      chunks: ['vender','main'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index4.html',
-      chunks: ['vender','main4'],
     }),
     new FaviconsWebpackPlugin({
       inject: true,

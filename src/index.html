@@ -2,21 +2,421 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>海委會一站式入口網站</title>
+  <title>海域遊憩平台一站式網站</title>
 </head>
 <body>
-  <div id="container"></div>
-  <div class="wrapper">
-    <header class="container">
+  <!-- Modal2 海況-->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">海情海象</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row text-center">
+            <div class="col-6 col-sm-4">
+              <a href="map.html?uuid=44d021b6-d010-49cc-b9a6-2fd816e9d50b">
+                <img src="./img/lightbox_page/wave2.svg" class="item4-icon">
+                <div>
+                  <span class="d-iline-block">異常潛勢(瘋狗浪)</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="map.html?uuid=b7d12861-af3f-4cc0-847a-7d080ab03da0">
+                <img src="./img/lightbox_page/observatory.png" class="item4-icon">
+                <div>
+                  <span class="d-iline-block">商港觀測站</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="map.html?uuid=bc54a445-7b3d-43d1-80f9-10fbf5cec4b3">
+                <img src="./img/lightbox_page/forecast.png" class="item4-icon">
+                <div>
+                  <span class="d-iline-block">近海天氣預報</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="map.html?uuid=8794829d-4d5e-4ba0-9133-ddd61719a4df">
+                <img src="./img/lightbox_page/coastal.png" class="item4-icon">
+                <div>
+                  <span class="d-iline-block">沿海鄉鎮天氣預報</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="map.html?uuid=d48172cd-4ab4-4649-bcd1-1b0970827366">
+                <img src="./img/lightbox_page/occeanCurrent.png" class="item4-icon">
+                <div>
+                  <span class="d-iline-block">表面海流</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="map.html?uuid=ad990e52-379e-4e8f-89dd-e03e464b27f5">
+                <img src="./img/lightbox_page/tidal.png" class="item4-icon">
+                <div>
+                  <span class="d-iline-block">潮汐資訊</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="map.html?uuid=1a2ede8e-59cd-464f-b964-e44d1476f5fd">
+                <img src="./img/lightbox_page/quality.png" class="item4-icon">
+                <div>
+                  <span class="d-iline-block">海域水質</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <div class="weather-contentBlock">
+                <img src="./img/lightbox_page/wave.png" class="item4-icon">
+                <div>
+                  <span class="d-block">波浪資訊</span>
+                  <a href="map.html?uuid=2438f673-3a6e-4762-8529-6a2cadc84a51">浪高</a>
+                  <a href="map.html?uuid=3322298e-bbe1-4a91-8d9f-7205c228bdcc">週期</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-4">
+              <div class="weather-contentBlock">
+                <img src="./img/lightbox_page/surfaceTemperature.png" class="item4-icon">
+                <div>
+                  <span class="d-block">波浪資訊</span>
+                  <a href="map.html?uuid=9f3c63b0-7fe7-493a-9995-0e70dc4ae5b9">溫度</a>
+                  <a href="map.html?uuid=5a1cb7a2-2c28-4860-a4c8-80c057929ea1">高度</a>
+                  <a href="map.html?uuid=4b5fb55a-3d4e-412c-a23b-c0d3b950e886">鹽度</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="https://www.windy.com/?23.652,121.278,8" target="_blank">
+                <img src="./img/lightbox_page/windy.png" class="item4-icon">
+                <div>
+                  <span class="d-block">Windy</span>
+                  <p class="d-inline-block">(外部連結)</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a href="https://safesee.cwb.gov.tw/V2/" target="_blank">
+                <img src="./img/lightbox_page/cwb.png" class="item4-icon">
+                <div>
+                  <span class="d-block">台灣氣象災防平台</span>
+                  <p class="d-inline-block">(外部連結)</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal3 網站宣言-->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title TealBlue" id="exampleModalLabel">網站宣言</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <div class="my-3 p-2 rounded">
+                <p>本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。使用者不得將本系統所提供之資料內容或查詢結果作為任何形式之依據或主張，本會對於所有資料內容之正確性及完整性，皆不負擔保之責。使用者如因使用本系統之資料而受損害或損失，或因此導致使用者或第三人遭受損害或損失而遭求償者，本系統管理機關及各資料提供機關不負任何賠償或補償之責。
+                若屬全面性禁止事項或禁止採捕海域動、植物，例如海洋保育署公告之保育物種、漁業署公告之禁用漁法或禁止採捕魚種，即使沒在個別海域之法令中敘述，仍屬應遵守之規定。使用者進入本系統，視同同意上開使用規範。本系統所有資料僅限正常查詢、瀏覽使用，未經本會同意之大量抄錄或複製資料行為，將依違反著作權法及妨礙電腦使用罪辦理。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal4 活動申請-->
+  <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title TealBlue" id="exampleModalLabel">活動申請</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="text-justify">為提供民眾方便友善之橫向連結資訊，目前提供相關磯釣活動申請、遊艇申辦服務流程說明、龜山島登島申請與台江公園國家水域等海灣活動需提供申請之流程
+              </h5>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">基隆市島礁磯釣活動</h5>
+                  <div class="card-text d-none d-sm-block">
+                    基隆市政府2020年推出【島礁磯釣證線上申請系統】，讓民眾更方便快速完成辦證，帶動島礁磯釣國際賽事與週邊相關產業發展。
+                  </div>
+                  <a href="http://klfish.naffic.org.tw/webpad/webpad.aspx?EpfJdId9UuDR1K%2BD%2BQ4%2F70pgeh4ocITQ" class="card-link primary" target="_blank">
+                    基隆區漁會官方網站
+                  </a>
+                  <a href="https://www.icellars.tw/keelungreeffishing/auth/login.html" class="card-link" target="_blank" style="display: table-cell">基隆市島礁磯釣活動申請入口
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">遊艇申辦服務平台</h5>
+                  <div class="card-text d-none d-sm-block">
+                    交通部航港局於2019年推出【遊艇申辦服務平台】。服務平台使用非常容易，只要登錄帳號、填寫進出港申請、申請泊位，即可等著收取email確認。
+                  </div>
+                  <a href="https://web02.mtnet.gov.tw/" class="card-link" target="_blank">
+                    海港單一窗口服務平台
+                  </a>								
+                  <a href="https://ftz.mtnet.gov.tw/YBerth/Portal/Logout" class="card-link" target="_blank" style="display: table-cell">
+                    泊位資訊查詢
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">東北角龜山島登島</h5>
+                  <div class="card-text d-none d-sm-block">
+                    龜山島各項申請查詢作業、船舶資訊、法規資訊、登島表單之線上申請系統。
+                  </div>								
+                  <a href="https://events.necoast-nsa.gov.tw/coast/index.aspx" class="card-link" target="_blank">
+                    東北角龜山島登島官方網站
+                  </a>
+                  <a href="https://events.necoast-nsa.gov.tw/Coast/Application.aspx?a=2659" class="card-link" target="_blank" style="display: table-cell">
+                    登島線上申請
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">台江國家公園水域</h5>
+                  <div class="card-text d-none d-sm-block">
+                    特別景觀區之「特一-北汕尾濕地特別景觀區」、「特五-曾文溪口特別景觀區」部分公共河道水域，一般管制區之「管一-鹽水溪水域一般管制區」部分水域、「管八-七股潟湖一般管制區」水域應向台江國家公園申請核准後始得從事水域遊憩活動。
+                  </div>
+                  <a href="https://www.tjnp.gov.tw/" class="card-link" target="_blank">
+                    台江國家公園官方網站
+                  </a>								
+                  <a href="https://www.tjnp.gov.tw/PublicInformationDetail.aspx?Cond=83713bde-e4e4-4f5c-a8ad-ed4cc0d60c34" class="card-link" target="_blank" style="display: table-cell">
+                    活動申請須知
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal5 活動布告欄-->
+  <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title TealBlue">活動布告欄</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><a href="https://www.sow.org.tw/faq/myiccday" class="tooltip-test" title="Tooltip" target="_blank">天天都是你的國際淨灘行動 請一起這樣愛海洋</a></p>
+          <p><a href="https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=141399&ctNode=650&mp=999" class="tooltip-test" title="Tooltip" target="_blank">海巡偕同師生淨灘，攜手恢復海灘樣貌</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal6 相關連結-->
+  <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title TealBlue" id="exampleModalLabel">相關連結</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="text-justify">
+                提供漁船管理辦法、賞鯨指南PDF、藍色公路
+              </h5>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">娛樂漁船</h5>
+                  <div class="card-text d-none d-sm-block">
+                    此為漁業署之娛樂漁業管理辦法條文連結，提供法條參考與相關文件。
+                  </div>								
+                  <a href="https://www.fa.gov.tw/cht/LawsCentralFisheries/content.aspx?id=17&chk=76cc8fe4-de25-4a4f-8a46-bdfd838601cc&param" class="card-link" target="_blank">
+                    漁業署相關文件連結
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">撿拾漂流木</h5>
+                  <div class="card-text d-none d-sm-block">
+                    林務局提供漂流木公文，須注意撿拾對象、區域、時間。撿拾後須到站登記才能搬運離開。
+                  </div>								
+                  <a href="https://www.forest.gov.tw/" class="card-link" target="_blank">
+                    林務局官方網站
+                  </a>
+                  <a href="https://www.forest.gov.tw/Driftwood" class="card-link" target="_blank" style="display: table-cell" >
+                    撿拾漂流木開放時間查詢
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">賞鯨活動</h5>
+                  <div class="card-text d-none d-sm-block">
+                    臺灣鯨豚資源豐富，全球80多種鯨豚中，有近30種曾出現於我國周遭海域，每年4月到10月間是臺灣的賞鯨季節，海保署透過「臺灣海域賞鯨指南」發布，以淺顯易懂的圖像文字，說明友善賞鯨重點原則，希望大家都能當個負責任的遊客，在開心賞鯨時，也瞭解如何減少賞鯨活動對於鯨豚族群造成衝擊，讓珍貴的鯨豚資源與賞鯨產業皆能永續發展。
+                  </div>								
+                  <a href="https://www.oca.gov.tw/ch/index.jsp" class="card-link" target="_blank">
+                    海洋保育署官方網站
+                  </a>
+                  <a href="https://ftz.mtnet.gov.tw/YBerth/Portal/Logout" class="card-link" target="_blank" style="display: table-cell">
+                    賞鯨指南(PDF)
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">藍色公路</h5>
+                  <div class="card-text d-none d-sm-block">
+                    藍色公路目前主要有兩條航線。一是基隆河，由大佳河濱公園碼頭出發至美堤碼頭、錫口碼頭，於內湖科技園區附近的河域再往返，主要以遊河為主，夜晚河畔建築物燈光以及橋上的光雕點綴，更能展現臺北都市之美；另外一條是淡水河，而在淡水河有五個乘船處，分別是大稻埕碼頭、關渡碼頭、淡水客船碼頭、淡水漁人碼頭、八里客船碼頭。
+                  </div>								
+                  <a href="https://www.riverfun.net/" class="card-link" target="_blank">
+                    藍色水路旅遊官方網站
+                  </a>
+                  <a href="https://www.cwb.gov.tw/V8/C/M/bluehighway_home.html" class="card-link" target="_blank" style="display: table-cell">
+                    藍色公路浪高說明
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">遊艇管理規則</h5>
+                  <div class="card-text d-none d-sm-block">
+                    此為全國法規資料庫之【遊艇管理規則】法規，提供有需要之民眾查閱。
+                  </div>								
+                  <a href="https://law.moj.gov.tw/Index.aspx" class="card-link" target="_blank">
+                    全國法規資料庫官方網站
+                  </a>
+                  <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0070069" class="card-link" target="_blank" style="display: table-cell">
+                    遊艇管理規則法規
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card mt-2 bg-img">
+                <div class="card-body opacity">
+                  <h5 class="card-title">海域保險專區</h5>
+                  <div class="card-text d-none d-sm-block">
+                    產險業者推出「海域活動綜合保險」商品，保障內容除了一般傷害保險與旅行平安險保障外，還增加民眾參與海域休憩活動可能面臨的傷害保障。
+                  </div>								
+                  <a href="http://www.nlia.org.tw/" class="card-link" target="_blank">
+                    中華民國產物保險商業同業公會
+                  </a>
+                  <a href="http://www.nlia.org.tw/modules/tadnews/page.php?ncsn=130&nsn=912#A" class="card-link" target="_blank" style="display: table-cell">
+                    海域活動保險專區
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="wrapper-top wrapper-middle">
+    <div class="container">
       <div class="row">
-        <a href="#" class="col-12 text-center navbar-brand Alabaster py-3 d-flex justify-content-center align-items-center">
+        <a href="#" class="col-12 text-center navbar-brand Alabaster py-lg-3 d-flex justify-content-center align-items-center">
           <img src="./img/LOGO.png" class="d-inline-block align-top logo">
-          <img src="./img/logoOCA.png" class="oca ms-1 ms-sm-2 ms-md-3">
+          <img src="./img/logoOCA.png" class="oca ms-3">
         </a>
       </div>
-    </header>
-    <div class="container">
+      <div class="row row-cols-auto justify-content-center mb-2">
+        <div class="col">
+          <div class="dropdown">
+            <div class="btn-group">
+              <button class="btn2 btn-lg dropdown-toggle TealBlue" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="buttontext">
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item active tab" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal3">網站宣言</a>
+                </li>
+                <li>
+                  <a class="dropdown-item tab" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal5">活動布告欄</a>
+                </li>
+                <li>
+                  <a class="dropdown-item tab" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal6">相關連結</a>
+                </li>
+                <li>
+                  <a class="dropdown-item tab" href="https://docs.google.com/forms/d/e/1FAIpQLScf7at41snW4-ZczKN3p2hR8M9VKj_Af82BWEsZg6uPfwnY3Q/viewform" target="_blank">意見回饋</a>
+                </li>
+                <li>
+                  <a class="dropdown-item tab" href="./res/109_12_一站式_使用說明_V1.1.pdf" target="_blank">使用說明(PDF)</a>
+                </li>
+                <li>
+                  <a class="dropdown-item tab" href="map.html">進入完整圖台</a>
+                </li>
+                <li>
+                  <a class="dropdown-item tab" href="map.html?uuid=df595e60-6287-4623-8317-4b8d6f82e2e5&panel=海情/海象資訊">海況影像</a>
+                </li>
+              </ul>
+            </div>
+          </div>					
+        </div>
+      </div>
+      <div class="row row-cols-auto mb-2 justify-content-center nav-bar">
+        <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+          <button class="btn OrchidPurple scoll">網站宣言</button>
+        </div>
+        <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+          <button class="btn OrchidPurple scoll">活動布告欄</button>
+        </div>
+        <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+          <button class="btn OrchidPurple scoll">相關連結</button>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScf7at41snW4-ZczKN3p2hR8M9VKj_Af82BWEsZg6uPfwnY3Q/viewform" class="col" target="_blank">
+          <button class="btn OrchidPurple scoll">意見回饋</button>
+        </a>
+        <a href="./res/109_12_一站式_使用說明_V1.1.pdf" class="col" target="_blank">
+          <button class="btn OrchidPurple scoll">使用說明(PDF)</button>
+        </a>
+        <div class="col">
+          <a href="map.html">
+            <button class="btn OrchidPurple scoll">進入圖台</button>
+          </a>
+        </div>
+        <div class="col">
+          <a href="map.html?uuid=df595e60-6287-4623-8317-4b8d6f82e2e5&panel=海情/海象資訊">
+            <button class="btn OrchidPurple scoll">海況影像</button>
+          </a>
+        </div>
+      </div>
       <div class="row">
         <p class="marquee">
           <span class="py-1 px-2 rounded-pill">
@@ -24,91 +424,59 @@
           </span>
         </p>
       </div>
-      <div class="row opacity text-center mt-2 bd-radiustop-30">
-        <a href="insidePage.html#tab1" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 fill p-3 gopage active">
-          <div class="my-3 my-lg-2">
-            <img class="section-item-icon" src="./img/leading_page/application.png">
+    </div>
+  </header>
+  <div class="wrapper wrapper-middle">
+    <div class="container">
+      <div class="row main row-cols-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+        <a href="" class="col p-3 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+          <div class="my-3 my-lg-2 OrchidPurple">
+            <img class="section-item-icon" src="./img/leading_page/newspaper.svg">
           </div>
-          <button class="btn2 TealBlue">活動申請</button>
+          <button class="btn Lotion">活動申請</button>
         </a>
-        <a href="insidePage.html#tab2" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 fill p-3 gopage">
-          <div class="my-3 my-lg-2">
-            <img class="section-item-icon" src="./img/leading_page/warning.png">
+        <a href="https://rocean.oac.gov.tw/" class="col p-3 d-flex justify-content-center align-items-center" target="_blank">
+          <div class="my-3 my-lg-2 OrchidPurple">
+            <img class="section-item-icon" src="./img/leading_page/location.svg">
           </div>
-          <button class="btn2 TealBlue">
-            禁止水域<br>
-            礙航/射擊通報
+          <button class="btn Lotion">法令資訊</button>
+        </a>
+        <a href="map.html" class="col p-3 d-flex justify-content-center align-items-center">
+          <div class="my-3 my-lg-2 OrchidPurple">
+            <img class="section-item-icon" src="./img/leading_page/kayak.svg">
+          </div>
+          <button class="btn Lotion">遊憩查詢</button>
+        </a>
+        <a href="" class="col p-3 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+          <div class="my-3 my-lg-2 OrchidPurple">
+            <img class="section-item-icon" src="./img/leading_page/waves.svg">
+          </div>
+          <button class="btn Lotion">海情海象</button>
+        </a>
+        <a href="map.html" class="col p-3 d-flex justify-content-center align-items-center">
+          <div class="my-3 my-lg-2 OrchidPurple">
+            <img class="section-item-icon" src="./img/leading_page/warning.svg">
+          </div>
+          <button class="btn Lotion">
+            射擊通報
           </button>
         </a>
-        <a href="insidePage.html#tab3" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 fill p-3">
-          <div class="  my-3 my-lg-2">
-            <img class="section-item-icon" src="./img/leading_page/recreation.png">
-          </div>
-          <button class="btn2 TealBlue">遊憩查詢</button>
-        </a>
-        <a href="insidePage.html#tab4" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 fill p-3" id="weatherPage">
-          <div class="  my-3 my-lg-2">
-            <img class="section-item-icon" src="./img/leading_page/weather.png">
-          </div>
-          <button class="btn2 TealBlue">氣象海情</button>
-        </a>
-        <a href="insidePage.html#tab5" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 fill p-3">
-            <div class="  my-3 my-lg-2">
-              <img class="section-item-icon" src="./img/leading_page/law.png">
-            </div>
-            <button class="btn2 TealBlue">法令資訊</button>
-        </a>
-        <a href="insidePage.html#tab6" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 fill p-3">
-          <div class="  my-3 my-lg-2">
-            <img class="section-item-icon" src="./img/leading_page/cctv.svg">
-          </div>
-          <button class="btn2 TealBlue">海況影像</button>
-        </a>
-        <a href="map.html" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 fill p-3">
-          <div class="  my-3 my-lg-2">
-            <img class="section-item-icon rounded-circle" src="./img/leading_page/taiwanmap.png">
-          </div>
-          <button class="btn2 TealBlue">進入地圖</button>
-        </a>
-      </div>
-      <div class="row opacity mt-2">
-        <div class="col-12">
-          <div class="my-3 p-2 bg-light rounded">
-            <h4>網站法規資訊</h4>
-            <!-- <p class="text-break">本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得<span id="dots">...</span><span class="more" id="more">，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。
-  
-              使用者不得將本系統所提供之資料內容或查詢結果作為任何形式之依據或主張，本會對於所有資料內容之正確性及完整性，皆不負擔保之責。使用者如因使用本系統之資料而受損害或損失，或因此導致使用者或第三人遭受損害或損失而遭求償者，本系統管理機關及各資料提供機關不負任何賠償或補償之責。
-    
-              若屬全面性禁止事項或禁止採捕海域動、植物，例如海洋保育署公告之保育物種、漁業署公告之禁用漁法或禁止採捕魚種，即使沒在個別海域之法令中敘述，仍屬應遵守之規定。
-    
-              使用者進入本系統，視同同意上開使用規範。本系統所有資料僅限正常查詢、瀏覽使用，未經本會同意之大量抄錄或複製資料行為，將依違反著作權法及妨礙電腦使用罪辦理。</span>
-            </p> -->
-            <!-- <h6 id="myBtn" class="btn">更多</h6>  -->
-            <p>本系統係為便利一般民眾單站視覺化查詢海域遊憩活動相關規定，所呈現之法規、公告資料為各主管機關、各縣市政府所提供資料彙整而得，因各主管機關、各縣市資料建置時間之差異及建檔品質，與實際公告或有不同，實際內容仍依各主管機關、各縣市政府公告為準。
-  
-              使用者不得將本系統所提供之資料內容或查詢結果作為任何形式之依據或主張，本會對於所有資料內容之正確性及完整性，皆不負擔保之責。使用者如因使用本系統之資料而受損害或損失，或因此導致使用者或第三人遭受損害或損失而遭求償者，本系統管理機關及各資料提供機關不負任何賠償或補償之責。
-    
-              若屬全面性禁止事項或禁止採捕海域動、植物，例如海洋保育署公告之保育物種、漁業署公告之禁用漁法或禁止採捕魚種，即使沒在個別海域之法令中敘述，仍屬應遵守之規定。
-    
-              使用者進入本系統，視同同意上開使用規範。本系統所有資料僅限正常查詢、瀏覽使用，未經本會同意之大量抄錄或複製資料行為，將依違反著作權法及妨礙電腦使用罪辦理。
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
-  <footer class="container text-center mt-2 footer rounded-3">
-    <div class="row opacity pt-3 rounded-3">
-      <h6 class="col-12 col-sm-4 col-lg-2">&copy海洋委員會</h6>
-      <h6 class="col-12 col-sm-8 col-lg-4">高雄市前鎮區成功二路25號4樓</h6>
-      <h6 class="col-12 col-sm-4 col-lg-2">(07)338-1810</h6>
-      <h6 class="col-12 col-sm-8 col-lg-4">
-        瀏覽人次:<p id="people" class="d-inline">2223</p>
-      </h6>
-    </div>
-  </footer>
-  <div id="stop" class="scrollTop">
-    <img src="./img/up-arrow2.svg">
+
+<footer class="container text-center footer rounded-3">
+  <div class="row opacity pt-3 rounded-3">
+    <h6 class="col-12 col-sm-4 col-lg-2">&copy海洋委員會</h6>
+    <h6 class="col-12 col-sm-8 col-lg-4">高雄市前鎮區成功二路25號4樓</h6>
+    <h6 class="col-12 col-sm-4 col-lg-2">(07)338-1810</h6>
+    <h6 class="col-12 col-sm-8 col-lg-4">
+      瀏覽人次:<p id="pageViews" class="d-inline"></p>
+    </h6>
   </div>
+</footer>
+<div id="stop" class="scrollTop">
+  <img src="./img/up-arrow.svg">
+</div>
 </body>
 </html>

@@ -2,6 +2,6 @@ import 'jquery';
 import 'popper.js';
 import 'bootstrap';
 
-import 'style4.scss';
+import 'style.scss';
+import 'background.js';
 import 'index';
-import 'fetch.js';

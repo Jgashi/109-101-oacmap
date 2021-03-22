@@ -8,24 +8,19 @@ fetch("https://ocean.taiwan.gov.tw/OacGA_HF/ocatwgatotalpageviews.json")
 
 fetch("https://ocean.taiwan.gov.tw/OpenData/CWB_Typhoon/json/W-C0034-001_002.json")
 .then(res => {
-  console.log(res);
   return res.json();
 }).then(data => {
-  console.log(data);
-  console.log(data.cap)
-  let output = document.getElementById('marquee').innerHTML
-  data.cap.forEach(function(post) {
-    output += `
-    <div class="py-1 px-2 rounded-pill">
-    ${post.description}
-    </div>
-    `
-    //output.replace(/\。/g,'。<br>');
-    var a = typeof(post.description.replace(/\。/g,'。<br>'));
-    console.log(a);
-    console.log(post.description);
-    
-    document.getElementById('marquee').innerHTML = output;
-    console.log(output);
-  });
+  const urgency = ["Immediate","Expected","Future","Past","Unknown"]
+  //調完樣式改為Immediate、Expected、Future，Past、Unknown為不須顯示警報
+  if (urgency.includes("Past","Unknown")) {
+    let output = document.getElementById('marquee').innerHTML
+    data.cap.forEach(function(post) {
+      output += `
+      <div class="px-2">
+      ${post.description.replace(/\n/g,"<br/>").split('<br/><br/>',1)}
+      </div>
+      `
+      document.getElementById('marquee').innerHTML = output;
+    });
+  }
 })

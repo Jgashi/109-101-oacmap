@@ -16,10 +16,11 @@ fetch("https://ocean.taiwan.gov.tw/OpenData/CWB_Typhoon/json/W-C0034-001_002.jso
     let output = document.getElementById('marquee').innerHTML
     data.cap.forEach(function(post) {
       output += `
-      <div class="px-2">
-      ${post.description.replace(/\n/g,"<br/>").split('<br/><br/>',1)}
-      </div>
+        <span class="px-2">
+        ${post.description.split('[注意事項]',1)}
+        </span>
       `
+      console.log(post.description);
       document.getElementById('marquee').innerHTML = output;
     });
   }
